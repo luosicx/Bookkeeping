@@ -37,6 +37,8 @@ jobs:
       - name: Generate Coverage Report
         run: |
           xcrun xccov view --report TestResults.xcresult --json > coverage.json || true
+          # Convert to lcov format for SonarCloud
+          xcrun xccov view --report TestResults.xcresult --lcov > coverage.lcov || true
 
       - name: Run SwiftLint
         run: |
