@@ -1,0 +1,57 @@
+# SwiftLint 配置文件
+# https://realm.github.io/SwiftLint/rule-directory.html
+
+# 排除的目录
+excluded:
+  - BookkeepingWidget
+  - BookkeepingTests
+  - BookkeepingUITests
+  - Pods
+  - Carthage
+  - .build
+  - DerivedData
+  - Build
+
+# 禁用的规则
+disabled_rules:
+  - trailing_whitespace
+  - trailing_newline
+  - opening_brace
+  - statement_position
+  - comma
+  - colon
+  - return_arrow_whitespace
+  - operator_whitespace
+  - closure_parameter_position
+  - mark
+  - todo
+  - force_try
+  - force_cast
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - line_length
+  - file_length
+  - type_body_length
+  - function_body_length
+  - type_name
+  - identifier_name
+  - unused_closure_parameter
+  - trailing_semicolon
+  - function_parameter_count
+  - cyclomatic_complexity
+  - multiple_closures_with_trailing_closure
+  - large_tuple
+  - nesting
+  - no_fallthrough_only
+  - vertical_whitespace
+  - unused_import
+  - weak_delegate
+  - redundant_discardable_let
+  - trailing_comma
+  - syntactic_sugar
+  - unneeded_parentheses_in_closure_argument
+  - unused_setter_value
+  - valid_ibinspectable
+  - vertical_parameter_alignment
+  - void_return
+  - redundant_string_enum_value

@@ -20,22 +20,7 @@ class ReceiptScanner: ObservableObject {
         }
         
         let request = VNRecognizeTextRequest { [weak self] request, error in
-            DispatchQueue.main.async {
-                self?.isProcessing = false
-                
-                if let error = error {
-                    self?.errorMessage = "识别失败: \(error.localizedDescription)"
-                    return
-                }
-                
-                guard let observations = request.results as? [VNRecognizedTextObservation] else {
-                    self?.errorMessage = "未识别到文字"
-                    return
-                }
-                
-                let text = observations.compactMap { $0.topCandidates(1).first?.string }.joined(separator: "\n")
-                self?.parseReceiptText(text)
-            }
+            self?.handleRecognitionResult(request, error: error)
         }
         
         request.recognitionLanguages = ["zh-Hans", "zh-Hant", "en"]
@@ -43,15 +28,34 @@ class ReceiptScanner: ObservableObject {
         
         let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
         
-        DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             do {
                 try handler.perform([request])
             } catch {
                 DispatchQueue.main.async {
-                    self.isProcessing = false
-                    self.errorMessage = "识别失败: \(error.localizedDescription)"
+                    self?.isProcessing = false
+                    self?.errorMessage = "识别失败: \(error.localizedDescription)"
                 }
             }
+        }
+    }
+    
+    private func handleRecognitionResult(_ request: VNRequest, error: Error?) {
+        DispatchQueue.main.async { [weak self] in
+            self?.isProcessing = false
+            
+            if let error = error {
+                self?.errorMessage = "识别失败: \(error.localizedDescription)"
+                return
+            }
+            
+            guard let observations = request.results as? [VNRecognizedTextObservation] else {
+                self?.errorMessage = "未识别到文字"
+                return
+            }
+            
+            let text = observations.compactMap { $0.topCandidates(1).first?.string }.joined(separator: "\n")
+            self?.parseReceiptText(text)
         }
     }
     

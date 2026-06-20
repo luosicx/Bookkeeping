@@ -4,7 +4,7 @@ import LocalAuthentication
 class BiometricAuth {
     static let shared = BiometricAuth()
     
-    private init() {}
+    private init() {} // Singleton - use shared instance
     
     func authenticate(completion: @escaping (Bool, Error?) -> Void) {
         let context = LAContext()

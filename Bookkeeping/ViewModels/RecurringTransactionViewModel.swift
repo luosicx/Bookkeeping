@@ -90,10 +90,7 @@ class RecurringTransactionViewModel {
     private func shouldGenerate(recurring: RecurringTransaction, date: Date, calendar: Calendar) -> Bool {
         guard date >= recurring.startDate else { return false }
         if let endDate = recurring.endDate, date > endDate { return false }
-        
-        if let lastGenerated = recurring.lastGenerated {
-            if calendar.isDate(lastGenerated, inSameDayAs: date) { return false }
-        }
+        if let lastGenerated = recurring.lastGenerated, calendar.isDate(lastGenerated, inSameDayAs: date) { return false }
         
         let components = calendar.dateComponents([.year, .month, .day, .weekday], from: date)
         

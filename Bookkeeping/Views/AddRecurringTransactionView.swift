@@ -93,8 +93,8 @@ struct AddRecurringTransactionView: View {
                     }
                 }
                 
-                Section(header: Text(L.account)) {
-                    Picker(L.account, selection: $selectedAccount) {
+                Section(header: Text(L.accountName)) {
+                    Picker(L.accountName, selection: $selectedAccount) {
                         Text(L.none).tag(nil as Account?)
                         ForEach(accounts) { account in
                             HStack {

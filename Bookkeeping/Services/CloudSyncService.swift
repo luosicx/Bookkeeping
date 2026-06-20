@@ -15,10 +15,9 @@ class CloudSyncService {
     func checkAccountStatus(completion: @escaping (Bool, Error?) -> Void) {
         container.accountStatus { status, error in
             DispatchQueue.main.async {
-                switch status {
-                case .available:
+                if status == .available {
                     completion(true, nil)
-                default:
+                } else {
                     completion(false, error)
                 }
             }
@@ -53,11 +52,11 @@ class CloudSyncService {
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: recordType, predicate: predicate)
         
-        database.fetch(withQuery: query) { result in
+        database.fetch(withQuery: query) { fetchResult in
             DispatchQueue.main.async {
-                switch result {
-                case .success(let result):
-                    completion(result.matchResults.compactMap { try? $0.1.get() }, nil)
+                switch fetchResult {
+                case .success(let queryResult):
+                    completion(queryResult.matchResults.compactMap { try? $0.1.get() }, nil)
                 case .failure(let error):
                     completion(nil, error)
                 }

@@ -20,7 +20,7 @@ struct BackupTransaction: Codable {
 class BackupService {
     static let shared = BackupService()
     
-    private init() {}
+    private init() {} // Singleton - use shared instance
     
     func exportData(modelContext: ModelContext) throws -> URL {
         let descriptor = FetchDescriptor<Transaction>(sortBy: [SortDescriptor(\.date, order: .reverse)])

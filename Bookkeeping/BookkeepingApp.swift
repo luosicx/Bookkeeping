@@ -9,7 +9,7 @@ struct BookkeepingApp: App {
         WindowGroup {
             MainTabView()
                 .onAppear {
-                    NotificationService.shared.requestPermission { _ in }
+                    NotificationService.shared.requestPermission { _ in } // Permission result handled elsewhere
                     initializeWidgetData()
                 }
         }

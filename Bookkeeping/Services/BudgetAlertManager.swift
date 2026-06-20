@@ -4,7 +4,7 @@ import UserNotifications
 class BudgetAlertManager {
     static let shared = BudgetAlertManager()
     
-    private init() {}
+    private init() {} // Singleton - use shared instance
     
     struct BudgetAlert {
         let title: String

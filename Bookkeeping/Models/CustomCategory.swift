@@ -27,7 +27,7 @@ class CustomCategoryManager: ObservableObject {
     
     @Published var customCategories: [CustomCategory] = []
     
-    private init() {}
+    private init() {} // Singleton - use shared instance
     
     func fetchCategories(modelContext: ModelContext) {
         let descriptor = FetchDescriptor<CustomCategory>(sortBy: [SortDescriptor(\.createdAt)])

@@ -219,7 +219,6 @@ struct Localization {
     var totalAssets: String { "total_assets".localized }
     var accountInfo: String { "account_info".localized }
     var transactionCount: String { "transaction_count".localized }
-    var account: String { "account_name".localized }
     var deleteAccountMessage: String { "delete_account_message".localized }
     var yes: String { "yes".localized }
     var no: String { "no".localized }

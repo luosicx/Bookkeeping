@@ -4,7 +4,7 @@ import UserNotifications
 class NotificationService {
     static let shared = NotificationService()
     
-    private init() {}
+    private init() {} // Singleton - use shared instance
     
     func requestPermission(completion: @escaping (Bool) -> Void) {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in

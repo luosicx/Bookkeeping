@@ -148,7 +148,7 @@ struct CameraView: UIViewControllerRepresentable {
         return picker
     }
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {} // No-op - required by protocol
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)

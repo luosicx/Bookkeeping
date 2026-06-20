@@ -125,15 +125,15 @@ struct OverallBudgetCard: View {
                         
                         Spacer()
                         
-                        VStack(alignment: .center) {
-                            Text("\(Int(status.percentage * 100))%")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                                .foregroundColor(status.isOverBudget ? .red : (status.isWarning ? .orange : .blue))
-                            Text(L.used)
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                        }
+                    VStack(alignment: .center) {
+                        Text("\(Int(status.percentage * 100))%")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(statusColor(for: status))
+                        Text(L.used)
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
                         
                         Spacer()
                         
@@ -149,7 +149,7 @@ struct OverallBudgetCard: View {
                     }
                     
                     ProgressView(value: min(status.percentage, 1.0))
-                        .tint(status.isOverBudget ? .red : (status.isWarning ? .orange : .blue))
+                        .tint(statusColor(for: status))
                         .scaleEffect(y: 2.0)
                 } else {
                     Text(L.tapToSetBudget)
@@ -271,7 +271,7 @@ struct BudgetSummaryCard: View {
             }
             
             ProgressView(value: min(percentage, 1.0))
-                .tint(percentage >= 1.0 ? .red : (percentage >= 0.8 ? .orange : .blue))
+                .tint(budgetStatusColor(percentage: percentage))
                 .scaleEffect(y: 2.0)
             
             HStack {
@@ -286,7 +286,7 @@ struct BudgetSummaryCard: View {
                 
                 Text("\(Int(percentage * 100))%")
                     .font(.caption)
-                    .foregroundColor(percentage >= 1.0 ? .red : (percentage >= 0.8 ? .orange : .blue))
+                    .foregroundColor(budgetStatusColor(percentage: percentage))
             }
         }
         .padding()
@@ -316,7 +316,7 @@ struct BudgetRow: View {
             }
             
             ProgressView(value: min(status.percentage, 1.0))
-                .tint(status.isOverBudget ? .red : (status.isWarning ? .orange : .blue))
+                .tint(statusColor(for: status))
                 .scaleEffect(y: 1.5)
             
             HStack {
@@ -343,6 +343,24 @@ struct BudgetRow: View {
         }
         .padding(.vertical, 4)
     }
+}
+
+private func statusColor(for status: BudgetStatus) -> Color {
+    if status.isOverBudget { return .red }
+    if status.isWarning { return .orange }
+    return .blue
+}
+
+private func statusColor(for status: OverallBudgetStatus) -> Color {
+    if status.isOverBudget { return .red }
+    if status.isWarning { return .orange }
+    return .blue
+}
+
+private func budgetStatusColor(percentage: Double) -> Color {
+    if percentage >= 1.0 { return .red }
+    if percentage >= 0.8 { return .orange }
+    return .blue
 }
 
 #Preview {

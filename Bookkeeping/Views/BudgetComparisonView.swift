@@ -41,13 +41,19 @@ struct BudgetComparisonView: View {
                         }
                         
                         GeometryReader { geometry in
+                            let progressColor: Color = {
+                                if percentage > 1 { return .red }
+                                if percentage > 0.8 { return .orange }
+                                return .green
+                            }()
+                            
                             ZStack(alignment: .leading) {
                                 RoundedRectangle(cornerRadius: 4)
                                     .fill(Color(.systemGray5))
                                     .frame(height: 8)
                                 
                                 RoundedRectangle(cornerRadius: 4)
-                                    .fill(percentage > 1 ? Color.red : percentage > 0.8 ? Color.orange : Color.green)
+                                    .fill(progressColor)
                                     .frame(width: geometry.size.width * min(percentage, 1), height: 8)
                             }
                         }
