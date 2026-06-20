@@ -1,0 +1,415 @@
+/* 繁體中文 */
+
+/* 通用 */
+"app_name" = "記賬本";
+"cancel" = "取消";
+"save" = "儲存";
+"delete" = "刪除";
+"edit" = "編輯";
+"search" = "搜尋";
+"done" = "完成";
+"confirm" = "確認";
+"close" = "關閉";
+
+/* 標籤頁 */
+"tab_home" = "首頁";
+"tab_statistics" = "統計";
+"tab_settings" = "設定";
+
+/* 首頁 */
+"home_title" = "記賬本";
+"monthly_balance" = "本月結餘";
+"income" = "收入";
+"expense" = "支出";
+"recent_transactions" = "最近交易";
+"transaction_count" = "共 %d 筆";
+"no_transactions" = "暫無交易記錄";
+"add_first_record" = "點擊右上角 + 新增第一筆記錄";
+"all" = "全部";
+
+/* 新增記錄 */
+"add_transaction" = "新增記錄";
+"transaction_type" = "類型";
+"amount" = "金額";
+"category" = "分類";
+"note" = "備註";
+"date" = "日期";
+"select_date" = "選擇日期";
+"add_note" = "新增備註...";
+"amount_placeholder" = "0.00";
+
+/* 交易詳情 */
+"transaction_detail" = "交易詳情";
+"basic_info" = "基本資訊";
+"delete_record" = "刪除記錄";
+"edit_record" = "編輯記錄";
+"confirm_delete" = "確認刪除";
+"delete_message" = "確定要刪除這條記錄嗎？此操作無法撤銷。";
+
+/* 分類 - 支出 */
+"category_food" = "餐飲";
+"category_transport" = "交通";
+"category_shopping" = "購物";
+"category_entertainment" = "娛樂";
+"category_housing" = "住房";
+"category_medical" = "醫療";
+"category_education" = "教育";
+"category_other_expense" = "其他";
+
+/* 分類 - 收入 */
+"category_salary" = "工資";
+"category_bonus" = "獎金";
+"category_investment" = "投資";
+"category_other_income" = "其他";
+
+/* 統計 */
+"statistics_title" = "統計";
+"period_week" = "本週";
+"period_month" = "本月";
+"period_year" = "本年";
+"expense_category" = "支出分類";
+"income_expense_trend" = "收支趨勢";
+"top_expenses" = "支出排行";
+"no_data" = "暫無資料";
+"transaction_count_format" = "%d 筆";
+
+/* 設定 */
+"settings_title" = "設定";
+"basic_settings" = "基本設定";
+"security" = "安全";
+"tools" = "工具";
+"currency_unit" = "貨幣單位";
+"theme" = "主題";
+"theme_system" = "跟隨系統";
+"theme_light" = "淺色";
+"theme_dark" = "深色";
+"data_management" = "資料管理";
+"export_data" = "匯出資料";
+"clear_all_data" = "清除所有資料";
+"about" = "關於";
+"version" = "版本";
+"developer" = "開發者";
+"export_success" = "匯出成功";
+"export_message" = "資料已匯出到：%@";
+"export_failed" = "匯出失敗：%@";
+"confirm_clear" = "確認清除";
+"clear_message" = "確定要清除所有記賬資料嗎？此操作無法撤銷。";
+
+/* 交易類型 */
+"income_type" = "收入";
+"expense_type" = "支出";
+
+/* 月份選擇 */
+"previous_month" = "上一月";
+"next_month" = "下一月";
+
+/* 備份與還原 */
+"backup_restore" = "備份與還原";
+"backup_data" = "備份資料";
+"restore_data" = "還原資料";
+"backup_list" = "備份記錄";
+"backup_success" = "備份成功";
+"backup_message" = "資料已備份到：%@";
+"backup_failed" = "備份失敗：%@";
+"restore_success" = "還原成功";
+"restore_message" = "成功還原 %d 筆記錄";
+"restore_failed" = "還原失敗：%@";
+"restore_confirm" = "確認還原";
+"restore_confirm_message" = "確定要還原此備份嗎？重複的記錄將被跳過。";
+"delete_backup" = "刪除備份";
+"delete_backup_confirm" = "確認刪除備份";
+"delete_backup_message" = "確定要刪除此備份檔案嗎？";
+"no_backups" = "暫無備份記錄";
+"backup_count" = "%d 筆備份";
+"backup_date" = "備份日期";
+"backup_records" = "記錄數：%d";
+
+/* 資料匯出 */
+"export_format" = "匯出格式";
+"export_to" = "匯出為 %@";
+"export_history" = "匯出歷史";
+"no_exports" = "暫無匯出記錄";
+"delete_file_message" = "確定要刪除此檔案嗎？";
+
+/* 預算管理 */
+"budget_management" = "預算管理";
+"total_budget" = "總預算";
+"remaining" = "剩餘";
+"spent" = "已花費";
+"category_budgets" = "分類預算";
+"no_budgets" = "暫未設定預算";
+"add_budget" = "新增預算";
+"budget_amount" = "預算金額";
+"month" = "月份";
+"select_month" = "選擇月份";
+"all_categories_have_budget" = "所有分類已設定預算";
+"over_budget" = "已超支";
+"budget_warning" = "即將超支";
+"on_track" = "正常";
+"budget_overrun" = "超出預算 ¥%.0f";
+"overall_budget" = "總預算";
+"set_budget" = "設定預算";
+"tap_to_set_budget" = "點擊設定總預算";
+"budget_hint" = "設定每月的總支出預算上限";
+"active" = "個生效";
+"used" = "已用";
+"budget_alert" = "預算提醒";
+"budget_exceeded" = "超支警告";
+"budget_check" = "檢查預算";
+
+/* 帳戶管理 */
+"account_management" = "帳戶管理";
+"my_accounts" = "我的帳戶";
+"no_accounts" = "暫未新增帳戶";
+"add_account" = "新增帳戶";
+"edit_account" = "編輯帳戶";
+"delete_account" = "刪除帳戶";
+"account_detail" = "帳戶詳情";
+"account_type" = "帳戶類型";
+"account_name" = "帳戶名稱";
+"enter_account_name" = "請輸入帳戶名稱";
+"initial_balance" = "初始餘額";
+"current_balance" = "當前餘額";
+"set_default" = "設為預設帳戶";
+"default_account" = "預設";
+"total_assets" = "總資產";
+"account_info" = "帳戶資訊";
+"transaction_count" = "交易筆數";
+"delete_account_message" = "確定要刪除此帳戶嗎？該帳戶下的交易記錄將變為無帳戶。";
+"yes" = "是";
+"no" = "否";
+
+/* 帳戶類型 */
+"account_cash" = "現金";
+"account_bank" = "銀行卡";
+"account_alipay" = "支付寶";
+"account_wechat" = "微信";
+"account_credit" = "信用卡";
+"account_other" = "其他";
+
+/* 定期記賬 */
+"recurring_transactions" = "定期記賬";
+"recurring_list" = "定期記錄";
+"no_recurring" = "暫無定期記錄";
+"add_recurring" = "新增定期記賬";
+"frequency" = "頻率";
+"frequency_daily" = "每天";
+"frequency_weekly" = "每週";
+"frequency_monthly" = "每月";
+"frequency_yearly" = "每年";
+"day_of_month" = "每月幾號";
+"day_of_week" = "每週幾";
+"day" = "號";
+"date_range" = "日期範圍";
+"start_date" = "開始日期";
+"end_date" = "結束日期";
+"has_end_date" = "設定結束日期";
+"auto_generate" = "自動生成";
+"generate_now" = "立即生成";
+"last_generated" = "上次生成";
+"paused" = "已暫停";
+"pause" = "暫停";
+"resume" = "恢復";
+"none" = "無";
+
+/* 星期 */
+"sunday" = "週日";
+"monday" = "週一";
+"tuesday" = "週二";
+"wednesday" = "週三";
+"thursday" = "週四";
+"friday" = "週五";
+"saturday" = "週六";
+
+/* 年度報告 */
+"annual_report" = "年度報告";
+"year_summary" = "年度匯總";
+"balance" = "結餘";
+"avg_per_month" = "月均支出";
+"monthly_trend" = "月度趨勢";
+"year_over_year" = "同比分析";
+"top_expense_months" = "支出最多月份";
+"top_income_months" = "收入最多月份";
+"month_abbr" = "月";
+"type" = "類型";
+
+/* 賬本管理 */
+"ledger_management" = "賬本管理";
+"my_ledgers" = "我的賬本";
+"no_ledgers" = "暫無賬本";
+"add_ledger" = "新增賬本";
+"edit_ledger" = "編輯賬本";
+"delete_ledger" = "刪除賬本";
+"ledger_type" = "賬本類型";
+"ledger_name" = "賬本名稱";
+"enter_ledger_name" = "請輸入賬本名稱";
+"default_ledger" = "預設";
+"select_ledger" = "選擇賬本";
+"all_ledgers" = "全部賬本";
+
+/* 賬本類型 */
+"ledger_personal" = "個人";
+"ledger_family" = "家庭";
+"ledger_travel" = "旅行";
+"ledger_work" = "工作";
+"ledger_other" = "其他";
+
+/* 賬本統計 */
+"ledger_stats" = "賬本統計";
+"total_income" = "總收入";
+"total_expense" = "總支出";
+"savings_rate" = "儲蓄率";
+"top_transactions" = "最大交易";
+
+/* 資料匯入 */
+"import_data" = "匯入資料";
+"import_from_csv" = "從 CSV 匯入";
+"import_from_json" = "從 JSON 匯入";
+"import_csv_hint" = "支援 CSV 格式的交易記錄";
+"import_json_hint" = "支援備份的 JSON 檔案";
+"import_success" = "匯入成功";
+"import_success_message" = "成功匯入 %d 筆記錄";
+"import_failed" = "匯入失敗";
+"import_format" = "格式說明";
+"csv_format" = "CSV 格式：日期,類型,分類,金額,備註";
+"json_format" = "JSON 格式：備份檔案的 JSON 格式";
+"import_note" = "注意：匯入的資料會新增到現有記錄中";
+
+/* 多幣種支援 */
+"currency_converter" = "匯率轉換";
+"base_currency" = "基準貨幣";
+"select_currency" = "選擇貨幣";
+"exchange_rate" = "匯率";
+"last_updated" = "最後更新";
+"update_rates" = "更新匯率";
+"from_amount" = "金額";
+"to_amount" = "轉換金額";
+
+/* 自訂分類 */
+"category_management" = "分類管理";
+"custom_categories" = "自訂分類";
+"no_custom_categories" = "暫無自訂分類";
+"add_category" = "新增分類";
+"category_name" = "分類名稱";
+"enter_category_name" = "請輸入分類名稱";
+"default_categories" = "預設分類";
+"default_tag" = "預設";
+
+/* 資料分享 */
+"share_data" = "分享資料";
+"share_options" = "分享選項";
+"share_as_text" = "分享為文字";
+"share_as_json" = "分享為 JSON";
+"share_as_csv" = "分享為 CSV";
+"share_text_hint" = "產生文字格式的帳單";
+"share_json_hint" = "產生 JSON 格式的資料";
+"share_csv_hint" = "產生 CSV 格式的資料";
+"share_preview" = "分享預覽";
+"shared_from" = "來自 Bookkeeping";
+"export_title" = "記賬本帳單";
+"export_date" = "匯出日期";
+"transactions" = "筆交易";
+
+/* 趨勢預測 */
+"trend_analysis" = "趨勢分析";
+"trend_direction" = "趨勢方向";
+"prediction" = "預測";
+"next_month_predicted" = "下月預測";
+"based_on" = "基於";
+"weighted_average" = "加權平均";
+"change_rate" = "變化率";
+"average_3_months" = "3個月平均";
+"average_6_months" = "6個月平均";
+"monthly_trend" = "月度趨勢";
+"category_trends" = "分類趨勢";
+"no_trend_data" = "暫無趨勢資料";
+"trend_data_hint" = "需要至少2個月的資料才能分析趨勢";
+"confidence_interval" = "信賴區間";
+"anomaly_detected" = "異常偵測";
+"seasonal_pattern" = "季節性模式";
+
+/* 語音記賬 */
+"voice_input" = "語音輸入";
+"stop_recording" = "停止錄音";
+"voice_result" = "識別結果";
+"voice_result_message" = "語音識別完成，已自動填充";
+"speech_recognition_unavailable" = "語音識別不可用";
+"speech_recognition_failed" = "語音識別失敗";
+
+/* 報告分享 */
+"report_share" = "報告分享";
+"generate_report" = "產生報告";
+"share" = "分享";
+"save_to_photos" = "儲存到相簿";
+"report_generated" = "報告已產生";
+"share_report" = "分享報告";
+
+/* 儲蓄目標 */
+"savings_goals" = "儲蓄目標";
+"my_goals" = "我的目標";
+"no_goals" = "暫無儲蓄目標";
+"add_goal" = "新增目標";
+"edit_goal" = "編輯目標";
+"goal_detail" = "目標詳情";
+"goal_name" = "目標名稱";
+"enter_goal_name" = "請輸入目標名稱";
+"icon" = "圖示";
+"target_amount" = "目標金額";
+"deadline" = "截止日期";
+"set_deadline" = "設定截止日期";
+"current_amount" = "當前金額";
+"progress" = "進度";
+"completed" = "已完成";
+"deposit" = "存入";
+"withdraw" = "取出";
+"deposit_amount" = "存入金額";
+"withdraw_amount" = "取出金額";
+"available_balance" = "可用餘額";
+"total_saved" = "已存總額";
+"days_remaining" = "剩餘 %d 天";
+"goal_count" = "%d 個目標";
+
+/* 應用鎖 */
+"app_lock" = "應用鎖";
+"app_lock_settings" = "應用鎖設定";
+"app_locked" = "應用已鎖定";
+"auth_to_continue" = "請驗證身份以繼續";
+"unlock" = "解鎖";
+"auth_reason" = "請驗證身份以訪問記賬本";
+"auth_failed" = "驗證失敗";
+"auth_failed_message" = "無法驗證身份，請重試";
+"retry" = "重試";
+"enable_app_lock" = "啟用應用鎖";
+"biometric_type" = "生物識別類型";
+"lock_settings" = "鎖定設定";
+"require_on_launch" = "啟動時要求驗證";
+"auto_lock" = "自動鎖定";
+"immediately" = "立即";
+"after_1_minute" = "1分鐘後";
+"after_5_minutes" = "5分鐘後";
+"after_15_minutes" = "15分鐘後";
+
+/* 賬單提醒 */
+"bill_reminders" = "賬單提醒";
+"bill_reminder" = "賬單提醒";
+"upcoming" = "即將到期";
+"overdue" = "已逾期";
+"paid" = "已支付";
+"no_reminders" = "暫無提醒";
+"add_reminder" = "新增提醒";
+"reminder_title" = "提醒標題";
+"enter_reminder_title" = "請輸入提醒標題";
+"has_amount" = "設定金額";
+"due_date" = "到期日期";
+"repeat" = "重複";
+"due_soon" = "即將到期";
+"mark_unpaid" = "標記未付";
+"disable" = "停用";
+"enable" = "啟用";
+"notification_permission" = "通知權限";
+"notification_permission_message" = "請在設定中允許通知以接收賬單提醒";
+"settings" = "設定";
+"upcoming_bill" = "即將到期";
+"reminder_with_amount" = "%@ 需支付 ¥%.2f";
+"reminder_without_amount" = "%@ 即將到期";
+"bill_due_soon" = "%@ 將在 %d 天後到期";

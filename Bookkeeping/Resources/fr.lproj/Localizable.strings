@@ -1,0 +1,415 @@
+/* Français */
+
+/* Général */
+"app_name" = "Comptabilité";
+"cancel" = "Annuler";
+"save" = "Enregistrer";
+"delete" = "Supprimer";
+"edit" = "Modifier";
+"search" = "Rechercher";
+"done" = "Terminé";
+"confirm" = "Confirmer";
+"close" = "Fermer";
+
+/* Onglets */
+"tab_home" = "Accueil";
+"tab_statistics" = "Statistiques";
+"tab_settings" = "Paramètres";
+
+/* Accueil */
+"home_title" = "Comptabilité";
+"monthly_balance" = "Solde mensuel";
+"income" = "Revenus";
+"expense" = "Dépenses";
+"recent_transactions" = "Transactions récentes";
+"transaction_count" = "%d transactions";
+"no_transactions" = "Aucune transaction";
+"add_first_record" = "Appuyez sur + pour ajouter";
+"all" = "Tout";
+
+/* Ajouter une transaction */
+"add_transaction" = "Ajouter";
+"transaction_type" = "Type";
+"amount" = "Montant";
+"category" = "Catégorie";
+"note" = "Note";
+"date" = "Date";
+"select_date" = "Sélectionner la date";
+"add_note" = "Ajouter une note...";
+"amount_placeholder" = "0,00";
+
+/* Détail de la transaction */
+"transaction_detail" = "Détail";
+"basic_info" = "Informations";
+"delete_record" = "Supprimer";
+"edit_record" = "Modifier";
+"confirm_delete" = "Confirmer la suppression";
+"delete_message" = "Êtes-vous sûr de vouloir supprimer cette transaction ? Cette action est irréversible.";
+
+/* Catégories - Dépenses */
+"category_food" = "Alimentation";
+"category_transport" = "Transport";
+"category_shopping" = "Shopping";
+"category_entertainment" = "Loisirs";
+"category_housing" = "Logement";
+"category_medical" = "Santé";
+"category_education" = "Éducation";
+"category_other_expense" = "Autre";
+
+/* Catégories - Revenus */
+"category_salary" = "Salaire";
+"category_bonus" = "Prime";
+"category_investment" = "Investissement";
+"category_other_income" = "Autre";
+
+/* Statistiques */
+"statistics_title" = "Statistiques";
+"period_week" = "Semaine";
+"period_month" = "Mois";
+"period_year" = "Année";
+"expense_category" = "Catégories de dépenses";
+"income_expense_trend" = "Tendance revenus/dépenses";
+"top_expenses" = "Top des dépenses";
+"no_data" = "Aucune donnée";
+"transaction_count_format" = "%d enregistrements";
+
+/* Paramètres */
+"settings_title" = "Paramètres";
+"basic_settings" = "Paramètres de base";
+"security" = "Sécurité";
+"tools" = "Outils";
+"currency_unit" = "Devise";
+"theme" = "Thème";
+"theme_system" = "Système";
+"theme_light" = "Clair";
+"theme_dark" = "Sombre";
+"data_management" = "Gestion des données";
+"export_data" = "Exporter";
+"clear_all_data" = "Tout effacer";
+"about" = "À propos";
+"version" = "Version";
+"developer" = "Développeur";
+"export_success" = "Export réussi";
+"export_message" = "Données exportées vers : %@";
+"export_failed" = "Échec de l'export : %@";
+"confirm_clear" = "Confirmer l'effacement";
+"clear_message" = "Êtes-vous sûr de vouloir effacer toutes les données ? Cette action est irréversible.";
+
+/* Types de transaction */
+"income_type" = "Revenus";
+"expense_type" = "Dépenses";
+
+/* Sélection du mois */
+"previous_month" = "Précédent";
+"next_month" = "Suivant";
+
+/* Sauvegarde & Restauration */
+"backup_restore" = "Sauvegarde & Restauration";
+"backup_data" = "Sauvegarder";
+"restore_data" = "Restaurer";
+"backup_list" = "Historique des sauvegardes";
+"backup_success" = "Sauvegarde réussie";
+"backup_message" = "Données sauvegardées vers : %@";
+"backup_failed" = "Échec de la sauvegarde : %@";
+"restore_success" = "Restauration réussie";
+"restore_message" = "%d enregistrements restaurés";
+"restore_failed" = "Échec de la restauration : %@";
+"restore_confirm" = "Confirmer la restauration";
+"restore_confirm_message" = "Êtes-vous sûr de vouloir restaurer cette sauvegarde ? Les doublons seront ignorés.";
+"delete_backup" = "Supprimer la sauvegarde";
+"delete_backup_confirm" = "Confirmer la suppression";
+"delete_backup_message" = "Êtes-vous sûr de vouloir supprimer ce fichier de sauvegarde ?";
+"no_backups" = "Aucune sauvegarde";
+"backup_count" = "%d sauvegardes";
+"backup_date" = "Date de sauvegarde";
+"backup_records" = "Enregistrements : %d";
+
+/* Export de données */
+"export_format" = "Format d'export";
+"export_to" = "Exporter en %@";
+"export_history" = "Historique des exports";
+"no_exports" = "Aucun export";
+"delete_file_message" = "Êtes-vous sûr de vouloir supprimer ce fichier ?";
+
+/* Gestion du budget */
+"budget_management" = "Budget";
+"total_budget" = "Budget total";
+"remaining" = "Restant";
+"spent" = "Dépensé";
+"category_budgets" = "Budgets par catégorie";
+"no_budgets" = "Aucun budget défini";
+"add_budget" = "Ajouter un budget";
+"budget_amount" = "Montant du budget";
+"month" = "Mois";
+"select_month" = "Sélectionner le mois";
+"all_categories_have_budget" = "Toutes les catégories ont un budget";
+"over_budget" = "Dépassé";
+"budget_warning" = "Attention";
+"on_track" = "En bonne voie";
+"budget_overrun" = "Dépassement de ¥%.0f";
+"overall_budget" = "Budget global";
+"set_budget" = "Définir le budget";
+"tap_to_set_budget" = "Appuyez pour définir";
+"budget_hint" = "Définissez votre limite mensuelle";
+"active" = "actifs";
+"used" = "utilisé";
+"budget_alert" = "Alerte budget";
+"budget_exceeded" = "Dépassé";
+"budget_check" = "Vérifier budget";
+
+/* Gestion des comptes */
+"account_management" = "Comptes";
+"my_accounts" = "Mes comptes";
+"no_accounts" = "Aucun compte";
+"add_account" = "Ajouter un compte";
+"edit_account" = "Modifier le compte";
+"delete_account" = "Supprimer le compte";
+"account_detail" = "Détail du compte";
+"account_type" = "Type de compte";
+"account_name" = "Nom du compte";
+"enter_account_name" = "Entrez le nom du compte";
+"initial_balance" = "Solde initial";
+"current_balance" = "Solde actuel";
+"set_default" = "Définir par défaut";
+"default_account" = "Par défaut";
+"total_assets" = "Total des actifs";
+"account_info" = "Informations";
+"transaction_count" = "Transactions";
+"delete_account_message" = "Êtes-vous sûr de vouloir supprimer ce compte ? Les transactions seront non assignées.";
+"yes" = "Oui";
+"no" = "Non";
+
+/* Types de compte */
+"account_cash" = "Espèces";
+"account_bank" = "Carte bancaire";
+"account_alipay" = "Alipay";
+"account_wechat" = "WeChat";
+"account_credit" = "Carte de crédit";
+"account_other" = "Autre";
+
+/* Transactions récurrentes */
+"recurring_transactions" = "Récurrent";
+"recurring_list" = "Liste récurrente";
+"no_recurring" = "Aucune transaction récurrente";
+"add_recurring" = "Ajouter récurrent";
+"frequency" = "Fréquence";
+"frequency_daily" = "Quotidien";
+"frequency_weekly" = "Hebdomadaire";
+"frequency_monthly" = "Mensuel";
+"frequency_yearly" = "Annuel";
+"day_of_month" = "Jour du mois";
+"day_of_week" = "Jour de la semaine";
+"day" = "";
+"date_range" = "Période";
+"start_date" = "Date de début";
+"end_date" = "Date de fin";
+"has_end_date" = "Définir date de fin";
+"auto_generate" = "Génération auto";
+"generate_now" = "Générer maintenant";
+"last_generated" = "Dernière génération";
+"paused" = "En pause";
+"pause" = "Pause";
+"resume" = "Reprendre";
+"none" = "Aucun";
+
+/* Jours de la semaine */
+"sunday" = "Dim";
+"monday" = "Lun";
+"tuesday" = "Mar";
+"wednesday" = "Mer";
+"thursday" = "Jeu";
+"friday" = "Ven";
+"saturday" = "Sam";
+
+/* Rapport annuel */
+"annual_report" = "Rapport annuel";
+"year_summary" = "Résumé annuel";
+"balance" = "Solde";
+"avg_per_month" = "Moy/mois";
+"monthly_trend" = "Tendance mensuelle";
+"year_over_year" = "Année sur année";
+"top_expense_months" = "Mois les plus dépensiers";
+"top_income_months" = "Mois les plus rentables";
+"month_abbr" = "";
+"type" = "Type";
+
+/* Gestion des livres */
+"ledger_management" = "Livres";
+"my_ledgers" = "Mes livres";
+"no_ledgers" = "Aucun livre";
+"add_ledger" = "Ajouter un livre";
+"edit_ledger" = "Modifier le livre";
+"delete_ledger" = "Supprimer le livre";
+"ledger_type" = "Type de livre";
+"ledger_name" = "Nom du livre";
+"enter_ledger_name" = "Entrez le nom du livre";
+"default_ledger" = "Par défaut";
+"select_ledger" = "Sélectionner";
+"all_ledgers" = "Tous les livres";
+
+/* Types de livre */
+"ledger_personal" = "Personnel";
+"ledger_family" = "Famille";
+"ledger_travel" = "Voyage";
+"ledger_work" = "Travail";
+"ledger_other" = "Autre";
+
+/* Statistiques */
+"ledger_stats" = "Stats";
+"total_income" = "Revenus totaux";
+"total_expense" = "Dépenses totales";
+"savings_rate" = "Taux d'épargne";
+"top_transactions" = "Top transactions";
+
+/* Importation */
+"import_data" = "Importer";
+"import_from_csv" = "Importer CSV";
+"import_from_json" = "Importer JSON";
+"import_csv_hint" = "Supporte le format CSV";
+"import_json_hint" = "Supporte les fichiers JSON";
+"import_success" = "Import réussi";
+"import_success_message" = "%d enregistrements importés";
+"import_failed" = "Échec de l'importation";
+"import_format" = "Format";
+"csv_format" = "CSV: Date,Type,Catégorie,Montant,Note";
+"json_format" = "JSON: Format de sauvegarde";
+"import_note" = "Les données seront ajoutées aux existantes";
+
+/* Multi-devises */
+"currency_converter" = "Convertisseur";
+"base_currency" = "Devise de base";
+"select_currency" = "Sélectionner";
+"exchange_rate" = "Taux";
+"last_updated" = "Dernière MAJ";
+"update_rates" = "Mettre à jour";
+"from_amount" = "Montant";
+"to_amount" = "Converti";
+
+/* Catégories personnalisées */
+"category_management" = "Catégories";
+"custom_categories" = "Personnalisées";
+"no_custom_categories" = "Aucune catégorie";
+"add_category" = "Ajouter";
+"category_name" = "Nom";
+"enter_category_name" = "Entrez le nom";
+"default_categories" = "Par défaut";
+"default_tag" = "Défaut";
+
+/* Partage */
+"share_data" = "Partager";
+"share_options" = "Options";
+"share_as_text" = "Texte";
+"share_as_json" = "JSON";
+"share_as_csv" = "CSV";
+"share_text_hint" = "Format texte";
+"share_json_hint" = "Format JSON";
+"share_csv_hint" = "Format CSV";
+"share_preview" = "Aperçu";
+"shared_from" = "Depuis Bookkeeping";
+"export_title" = "Relevé";
+"export_date" = "Date d'export";
+"transactions" = "transactions";
+
+/* Tendances */
+"trend_analysis" = "Tendances";
+"trend_direction" = "Tendance";
+"prediction" = "Prédiction";
+"next_month_predicted" = "Mois prochain";
+"based_on" = "Basé sur";
+"weighted_average" = "Moyenne pondérée";
+"change_rate" = "Taux de changement";
+"average_3_months" = "Moy. 3 mois";
+"average_6_months" = "Moy. 6 mois";
+"monthly_trend" = "Tendance mensuelle";
+"category_trends" = "Tendances par catégorie";
+"no_trend_data" = "Aucune donnée";
+"trend_data_hint" = "Minimum 2 mois de données";
+"confidence_interval" = "Intervalle de confiance";
+"anomaly_detected" = "Anomalie détectée";
+"seasonal_pattern" = "Modèle saisonnier";
+
+/* Saisie vocale */
+"voice_input" = "Saisie vocale";
+"stop_recording" = "Arrêter";
+"voice_result" = "Résultat";
+"voice_result_message" = "Reconnaissance vocale terminée, champs remplis";
+"speech_recognition_unavailable" = "Reconnaissance vocale indisponible";
+"speech_recognition_failed" = "Échec de la reconnaissance vocale";
+
+/* Partage de rapport */
+"report_share" = "Partager rapport";
+"generate_report" = "Générer";
+"share" = "Partager";
+"save_to_photos" = "Sauvegarder";
+"report_generated" = "Rapport généré";
+"share_report" = "Partager le rapport";
+
+/* Objectifs d'épargne */
+"savings_goals" = "Objectifs";
+"my_goals" = "Mes objectifs";
+"no_goals" = "Aucun objectif";
+"add_goal" = "Ajouter";
+"edit_goal" = "Modifier";
+"goal_detail" = "Détail";
+"goal_name" = "Nom";
+"enter_goal_name" = "Entrez le nom";
+"icon" = "Icône";
+"target_amount" = "Montant cible";
+"deadline" = "Date limite";
+"set_deadline" = "Définir date limite";
+"current_amount" = "Actuel";
+"progress" = "Progrès";
+"completed" = "Terminé";
+"deposit" = "Déposer";
+"withdraw" = "Retirer";
+"deposit_amount" = "Montant à déposer";
+"withdraw_amount" = "Montant à retirer";
+"available_balance" = "Disponible";
+"total_saved" = "Total épargné";
+"days_remaining" = "%d jours restants";
+"goal_count" = "%d objectifs";
+
+/* Verrouillage de l'app */
+"app_lock" = "Verrouillage";
+"app_lock_settings" = "Paramètres de verrouillage";
+"app_locked" = "Application verrouillée";
+"auth_to_continue" = "Authentifiez-vous pour continuer";
+"unlock" = "Déverrouiller";
+"auth_reason" = "Authentifiez-vous pour accéder à l'application";
+"auth_failed" = "Échec de l'authentification";
+"auth_failed_message" = "Impossible de s'authentifier. Veuillez réessayer.";
+"retry" = "Réessayer";
+"enable_app_lock" = "Activer le verrouillage";
+"biometric_type" = "Type biométrique";
+"lock_settings" = "Paramètres";
+"require_on_launch" = "Exiger au lancement";
+"auto_lock" = "Verrouillage auto";
+"immediately" = "Immédiatement";
+"after_1_minute" = "Après 1 minute";
+"after_5_minutes" = "Après 5 minutes";
+"after_15_minutes" = "Après 15 minutes";
+
+/* Rappels de factures */
+"bill_reminders" = "Rappels";
+"bill_reminder" = "Rappel";
+"upcoming" = "À venir";
+"overdue" = "En retard";
+"paid" = "Payé";
+"no_reminders" = "Aucun rappel";
+"add_reminder" = "Ajouter";
+"reminder_title" = "Titre";
+"enter_reminder_title" = "Entrez le titre";
+"has_amount" = "Définir montant";
+"due_date" = "Date d'échéance";
+"repeat" = "Répéter";
+"due_soon" = "Bientôt dû";
+"mark_unpaid" = "Marquer non payé";
+"disable" = "Désactiver";
+"enable" = "Activer";
+"notification_permission" = "Permission de notification";
+"notification_permission_message" = "Veuillez autoriser les notifications dans les Paramètres";
+"settings" = "Paramètres";
+"upcoming_bill" = "À venir";
+"reminder_with_amount" = "%@ dû : ¥%.2f";
+"reminder_without_amount" = "%@ arrive bientôt";
+"bill_due_soon" = "%@ dû dans %d jours";

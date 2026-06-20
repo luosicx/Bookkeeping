@@ -1,0 +1,38 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="coin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1024" height="1024" rx="224" fill="url(#bg)"/>
+  
+  <!-- 记账本 -->
+  <rect x="280" y="250" width="464" height="524" rx="20" fill="white" opacity="0.95"/>
+  <rect x="310" y="280" width="404" height="20" rx="10" fill="#4A90E2" opacity="0.3"/>
+  <rect x="310" y="320" width="404" height="20" rx="10" fill="#4A90E2" opacity="0.2"/>
+  <rect x="310" y="360" width="404" height="20" rx="10" fill="#4A90E2" opacity="0.2"/>
+  <rect x="310" y="400" width="404" height="20" rx="10" fill="#4A90E2" opacity="0.2"/>
+  <rect x="310" y="440" width="404" height="20" rx="10" fill="#4A90E2" opacity="0.2"/>
+  
+  <!-- 硬币 -->
+  <circle cx="650" cy="650" r="120" fill="url(#coin)" stroke="#DAA520" stroke-width="8"/>
+  
+  <!-- 美元符号 (使用路径绘制) -->
+  <path d="M 650 580 C 620 580 600 600 600 630 C 600 660 620 680 650 680 C 680 680 700 700 700 730 C 700 760 680 780 650 780 C 620 780 600 760 600 730" fill="none" stroke="#8B6914" stroke-width="16" stroke-linecap="round"/>
+  <line x1="650" y1="560" x2="650" y2="800" stroke="#8B6914" stroke-width="16" stroke-linecap="round"/>
+  
+  <!-- 图表线条 -->
+  <polyline points="350,550 450,480 550,520 650,450 750,400" fill="none" stroke="#4A90E2" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="350" cy="550" r="12" fill="#4A90E2"/>
+  <circle cx="450" cy="480" r="12" fill="#4A90E2"/>
+  <circle cx="550" cy="520" r="12" fill="#4A90E2"/>
+  <circle cx="650" cy="450" r="12" fill="#4A90E2"/>
+  <circle cx="750" cy="400" r="12" fill="#4A90E2"/>
+</svg>
