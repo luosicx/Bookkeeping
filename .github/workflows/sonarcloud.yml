@@ -24,6 +24,20 @@ jobs:
         with:
           xcode-version: '15.4'
 
+      - name: Run Tests with Coverage
+        run: |
+          xcodebuild test \
+            -project Bookkeeping.xcodeproj \
+            -scheme Bookkeeping \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=17.5' \
+            -enableCodeCoverage YES \
+            -resultBundlePath TestResults.xcresult \
+            | xcpretty || true
+
+      - name: Generate Coverage Report
+        run: |
+          xcrun xccov view --report TestResults.xcresult --json > coverage.json || true
+
       - name: Run SwiftLint
         run: |
           if command -v swiftlint &> /dev/null; then
