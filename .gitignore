@@ -31,6 +31,10 @@ Carthage/Build/
 .build/
 .swiftpm/
 
+# SonarCloud
+swiftlint-report.json
+.sonarcloud/
+
 # Other
 *.moved-aside
 *.pbxuser
