@@ -21,6 +21,7 @@
 		290BC6B0E1FD114870F42A2E /* Ledger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85B845DE0E9A980BD467753 /* Ledger.swift */; };
 		2E96EEAC86F7A5E17E96C9D3 /* ReceiptScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6497B71949E8F28AA00BE4BE /* ReceiptScanView.swift */; };
 		2E99C7CC4FCF93F77250777F /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F17EF8941F3D3F8EEB10C /* AccountViewModel.swift */; };
+		2F92E3FDE92743B1BBBBBE81 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3BCD4293CBAA809E6DDA14 /* ServiceTests.swift */; };
 		30EBDC19914B3CAFD68CCFCE /* SharedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FAA8110659D561D0ED6085 /* SharedDataManager.swift */; };
 		31F183A17E927D4426E50D05 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228F0B9C05104457B56DBCA /* SettingsView.swift */; };
 		342106A0EAD1F6657CD4081F /* VoiceInputButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFDB2AB7824E5F43D97D6C4 /* VoiceInputButton.swift */; };
@@ -60,6 +61,7 @@
 		99354B4FD75B261FA9A21220 /* TrendAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228D68E63BFBE2474ABF610 /* TrendAnalysisView.swift */; };
 		99E4A2F979A95053807D1CE1 /* BudgetAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383807EFD91466283D3CAD54 /* BudgetAlertTests.swift */; };
 		9A1BC2D186E4A6C9B6AC24BE /* DebtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A200DACDBB74332CA809E32 /* DebtViewModel.swift */; };
+		9E7752739A51450E57641253 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CA56F7B58B3704473E9CA7 /* ViewModelTests.swift */; };
 		9F7DEDFACE46BBF691190387 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C32110257BA6EF32B351B /* SampleData.swift */; };
 		A22D59A4CF5BDBD1255A4704 /* AnnualReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0D6BEB625CC0B81D01476 /* AnnualReportView.swift */; };
 		A2D4F631FC7F02763DC87E13 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7998BC17E18DB3C43150AB96 /* README.md */; };
@@ -157,6 +159,7 @@
 		6212A76928101CBAD784BA34 /* ReceiptScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanner.swift; sourceTree = "<group>"; };
 		6497B71949E8F28AA00BE4BE /* ReceiptScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScanView.swift; sourceTree = "<group>"; };
 		6579E4BBA0C3B5D44E9F0ED2 /* LedgerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerViewModel.swift; sourceTree = "<group>"; };
+		67CA56F7B58B3704473E9CA7 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		68C92E381E1C77D5F696BE6E /* RecurringTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringTransactionView.swift; sourceTree = "<group>"; };
 		692AF28B118CC4979C589FC7 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		6CF77A86E0F0C9F409D4330B /* RecurringTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringTransaction.swift; sourceTree = "<group>"; };
@@ -215,6 +218,7 @@
 		FC4EFFEA132DA9E95CA24FB0 /* BillReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillReminder.swift; sourceTree = "<group>"; };
 		FCD69DE43F00AC8200C9DB6A /* SavingsGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsGoalView.swift; sourceTree = "<group>"; };
 		FE1F220CC4EA0A1DB2063A54 /* BookkeepingTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BookkeepingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE3BCD4293CBAA809E6DDA14 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -332,6 +336,8 @@
 				AF42A44B0A1E3B433DF3E08A /* BudgetAlertLogicTests.swift */,
 				383807EFD91466283D3CAD54 /* BudgetAlertTests.swift */,
 				269EDFD3528EC09C7A40CB61 /* NotificationTests.swift */,
+				FE3BCD4293CBAA809E6DDA14 /* ServiceTests.swift */,
+				67CA56F7B58B3704473E9CA7 /* ViewModelTests.swift */,
 				9217B32EC174A3C7ACFE42D2 /* VoiceCommandParserTests.swift */,
 			);
 			path = BookkeepingTests;
@@ -637,6 +643,8 @@
 				ED8F8BCCCD96CCFF4E3C7687 /* BudgetAlertLogicTests.swift in Sources */,
 				99E4A2F979A95053807D1CE1 /* BudgetAlertTests.swift in Sources */,
 				B1086F6448245A088B76F2C4 /* NotificationTests.swift in Sources */,
+				2F92E3FDE92743B1BBBBBE81 /* ServiceTests.swift in Sources */,
+				9E7752739A51450E57641253 /* ViewModelTests.swift in Sources */,
 				B00F6367E34036F8ACA17496 /* VoiceCommandParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
