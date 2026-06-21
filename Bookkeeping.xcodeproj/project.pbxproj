@@ -47,6 +47,7 @@
 		5FB22C259021D2428B6C7696 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47734E66339192F8DCB8A0D8 /* Category.swift */; };
 		66023FF8AE9D4E17F4F51383 /* ExtendedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AEA02AC73AA4A1C61FCB5E /* ExtendedTests.swift */; };
 		6ABDC20D6A85FEE27CA490D2 /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04746912E23B2E2A8F582B6D /* SnapshotTests.swift */; };
+		6E45247C8D580CFA7B21EFC5 /* ViewModelNewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDF23484F8DED8196D4F34A /* ViewModelNewTests.swift */; };
 		6EC82F8BA92E6553475C5320 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD23DE6F10197CD1D3E45404 /* CurrencyService.swift */; };
 		70E8EF1DDAB1899E70E3635E /* BookkeepingUITestsDeep.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA726A9325A16D8D1324A1E1 /* BookkeepingUITestsDeep.swift */; };
 		74BE88B9A25C69274D4D6FFC /* ChartTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF5AF16E373CB150A019ABF /* ChartTheme.swift */; };
@@ -237,6 +238,7 @@
 		FCD69DE43F00AC8200C9DB6A /* SavingsGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsGoalView.swift; sourceTree = "<group>"; };
 		FE1F220CC4EA0A1DB2063A54 /* BookkeepingTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BookkeepingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3BCD4293CBAA809E6DDA14 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
+		FEDF23484F8DED8196D4F34A /* ViewModelNewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelNewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -361,6 +363,7 @@
 				269EDFD3528EC09C7A40CB61 /* NotificationTests.swift */,
 				FE3BCD4293CBAA809E6DDA14 /* ServiceTests.swift */,
 				04746912E23B2E2A8F582B6D /* SnapshotTests.swift */,
+				FEDF23484F8DED8196D4F34A /* ViewModelNewTests.swift */,
 				67CA56F7B58B3704473E9CA7 /* ViewModelTests.swift */,
 				9217B32EC174A3C7ACFE42D2 /* VoiceCommandParserTests.swift */,
 			);
@@ -678,6 +681,7 @@
 				B1086F6448245A088B76F2C4 /* NotificationTests.swift in Sources */,
 				2F92E3FDE92743B1BBBBBE81 /* ServiceTests.swift in Sources */,
 				6ABDC20D6A85FEE27CA490D2 /* SnapshotTests.swift in Sources */,
+				6E45247C8D580CFA7B21EFC5 /* ViewModelNewTests.swift in Sources */,
 				9E7752739A51450E57641253 /* ViewModelTests.swift in Sources */,
 				B00F6367E34036F8ACA17496 /* VoiceCommandParserTests.swift in Sources */,
 			);

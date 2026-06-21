@@ -1,5 +1,6 @@
 import XCTest
 import SwiftUI
+import SwiftData
 @testable import Bookkeeping
 
 @MainActor
@@ -193,7 +194,7 @@ final class SnapshotTests: XCTestCase {
     }
     
     func testTagManagementViewSnapshot() throws {
-        let view = TagManagementView()
+        let view = TagView()
         takeSnapshot(of: view, named: "TagManagementView")
     }
     
