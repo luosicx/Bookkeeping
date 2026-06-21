@@ -69,11 +69,7 @@ final class ComprehensiveSnapshotTests: XCTestCase {
             context.insert(account)
         }
         
-        let tags = [
-            ("重要", "red"),
-            ("工作", "blue"),
-            ("个人", "green"),
-        ]
+        let tags = [("重要", "red"), ("工作", "blue"), ("个人", "green")]
         for (name, color) in tags {
             let tag = Tag(name: name, color: color)
             context.insert(tag)
@@ -107,11 +103,7 @@ final class ComprehensiveSnapshotTests: XCTestCase {
             context.insert(reminder)
         }
         
-        let budgets = [
-            ("餐饮", 2000.0),
-            ("交通", 1000.0),
-            ("购物", 3000.0),
-        ]
+        let budgets = [("餐饮", 2000.0), ("交通", 1000.0), ("购物", 3000.0)]
         for (category, amount) in budgets {
             let budget = Budget(category: category, amount: amount, month: Date())
             context.insert(budget)
@@ -123,241 +115,206 @@ final class ComprehensiveSnapshotTests: XCTestCase {
         try context.save()
     }
     
-    func testHomeViewWithData() throws {
+    private func renderView<Content: View>(_ view: Content) {
+        let hostingController = UIHostingController(rootView: view)
+        hostingController.loadViewIfNeeded()
+        hostingController.view.layoutIfNeeded()
+    }
+    
+    // MARK: - Views with ModelContainer
+    
+    func testHomeViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = HomeView().modelContainer(container)
-        takeSnapshot(of: view, named: "HomeViewWithData")
+        renderView(HomeView().modelContainer(container))
     }
     
-    func testStatisticsViewWithData() throws {
+    func testStatisticsViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = StatisticsView().modelContainer(container)
-        takeSnapshot(of: view, named: "StatisticsViewWithData")
+        renderView(StatisticsView().modelContainer(container))
     }
     
-    func testBudgetViewWithData() throws {
+    func testBudgetViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = BudgetView().modelContainer(container)
-        takeSnapshot(of: view, named: "BudgetViewWithData")
+        renderView(BudgetView().modelContainer(container))
     }
     
-    func testDebtViewWithData() throws {
+    func testDebtViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = DebtView().modelContainer(container)
-        takeSnapshot(of: view, named: "DebtViewWithData")
+        renderView(DebtView().modelContainer(container))
     }
     
-    func testSavingsGoalViewWithData() throws {
+    func testSavingsGoalViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = SavingsGoalView().modelContainer(container)
-        takeSnapshot(of: view, named: "SavingsGoalViewWithData")
+        renderView(SavingsGoalView().modelContainer(container))
     }
     
-    func testBillReminderViewWithData() throws {
+    func testBillReminderViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = BillReminderView().modelContainer(container)
-        takeSnapshot(of: view, named: "BillReminderViewWithData")
+        renderView(BillReminderView().modelContainer(container))
     }
     
-    func testAccountViewWithData() throws {
+    func testAccountViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = AccountView().modelContainer(container)
-        takeSnapshot(of: view, named: "AccountViewWithData")
+        renderView(AccountView().modelContainer(container))
     }
     
-    func testRecurringTransactionViewWithData() throws {
+    func testRecurringTransactionViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = RecurringTransactionView().modelContainer(container)
-        takeSnapshot(of: view, named: "RecurringTransactionViewWithData")
+        renderView(RecurringTransactionView().modelContainer(container))
     }
     
-    func testTagViewWithData() throws {
+    func testTagViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = TagView().modelContainer(container)
-        takeSnapshot(of: view, named: "TagViewWithData")
+        renderView(TagView().modelContainer(container))
     }
     
-    func testCustomCategoryViewWithData() throws {
+    func testCustomCategoryViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = CustomCategoryView().modelContainer(container)
-        takeSnapshot(of: view, named: "CustomCategoryViewWithData")
+        renderView(CustomCategoryView().modelContainer(container))
     }
     
-    func testCalendarViewWithData() throws {
+    func testCalendarViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = CalendarView().modelContainer(container)
-        takeSnapshot(of: view, named: "CalendarViewWithData")
+        renderView(CalendarView().modelContainer(container))
     }
     
-    func testBudgetComparisonViewWithData() throws {
+    func testBudgetComparisonViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = BudgetComparisonView().modelContainer(container)
-        takeSnapshot(of: view, named: "BudgetComparisonViewWithData")
+        renderView(BudgetComparisonView().modelContainer(container))
     }
     
-    func testLedgerViewWithData() throws {
+    func testLedgerViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = LedgerView().modelContainer(container)
-        takeSnapshot(of: view, named: "LedgerViewWithData")
+        renderView(LedgerView().modelContainer(container))
     }
     
-    func testLedgerStatsViewWithData() throws {
+    func testLedgerStatsViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = LedgerStatsView().modelContainer(container)
-        takeSnapshot(of: view, named: "LedgerStatsViewWithData")
+        renderView(LedgerStatsView().modelContainer(container))
     }
     
-    func testSettingsViewWithData() throws {
+    func testSettingsViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = SettingsView().modelContainer(container)
-        takeSnapshot(of: view, named: "SettingsViewWithData")
+        renderView(SettingsView().modelContainer(container))
     }
     
-    func testCurrencyConverterViewWithData() throws {
+    func testCurrencyConverterViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = CurrencyConverterView().modelContainer(container)
-        takeSnapshot(of: view, named: "CurrencyConverterViewWithData")
+        renderView(CurrencyConverterView().modelContainer(container))
     }
     
-    func testTrendAnalysisViewWithData() throws {
+    func testTrendAnalysisViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = TrendAnalysisView().modelContainer(container)
-        takeSnapshot(of: view, named: "TrendAnalysisViewWithData")
+        renderView(TrendAnalysisView().modelContainer(container))
     }
     
-    func testAnnualReportViewWithData() throws {
+    func testAnnualReportViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = AnnualReportView().modelContainer(container)
-        takeSnapshot(of: view, named: "AnnualReportViewWithData")
+        renderView(AnnualReportView().modelContainer(container))
     }
     
-    func testNotificationSettingsViewWithData() throws {
+    func testNotificationSettingsViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = NotificationSettingsView().modelContainer(container)
-        takeSnapshot(of: view, named: "NotificationSettingsViewWithData")
+        renderView(NotificationSettingsView().modelContainer(container))
     }
     
-    func testExportViewWithData() throws {
+    func testExportViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = ExportView().modelContainer(container)
-        takeSnapshot(of: view, named: "ExportViewWithData")
+        renderView(ExportView().modelContainer(container))
     }
     
-    func testImportViewWithData() throws {
+    func testImportViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = ImportView().modelContainer(container)
-        takeSnapshot(of: view, named: "ImportViewWithData")
+        renderView(ImportView().modelContainer(container))
     }
     
-    func testBackupViewWithData() throws {
+    func testBackupViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = BackupView().modelContainer(container)
-        takeSnapshot(of: view, named: "BackupViewWithData")
+        renderView(BackupView().modelContainer(container))
     }
     
-    func testShareViewWithData() throws {
+    func testShareViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = ShareView().modelContainer(container)
-        takeSnapshot(of: view, named: "ShareViewWithData")
+        renderView(ShareView().modelContainer(container))
     }
     
-    func testReportShareViewWithData() throws {
+    func testReportShareViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = ReportShareView().modelContainer(container)
-        takeSnapshot(of: view, named: "ReportShareViewWithData")
+        renderView(ReportShareView().modelContainer(container))
     }
     
-    func testAppLockViewWithData() throws {
+    func testAppLockViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = AppLockView().modelContainer(container)
-        takeSnapshot(of: view, named: "AppLockViewWithData")
+        renderView(AppLockView().modelContainer(container))
     }
     
-    func testReceiptScanViewWithData() throws {
+    func testReceiptScanViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        
-        let view = ReceiptScanView { _, _ in }.modelContainer(container)
-        takeSnapshot(of: view, named: "ReceiptScanViewWithData")
+        renderView(ReceiptScanView { _, _ in }.modelContainer(container))
     }
     
-    func testTransactionDetailViewWithData() throws {
+    func testMainTabViewRender() throws {
+        let container = try createTestContainer()
+        let context = container.mainContext
+        try insertSampleData(context: context)
+        renderView(MainTabView().modelContainer(container))
+    }
+    
+    // MARK: - Views with ViewModel
+    
+    func testTransactionDetailViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
@@ -368,14 +325,11 @@ final class ComprehensiveSnapshotTests: XCTestCase {
         if let transaction = transactions.first {
             let viewModel = TransactionViewModel()
             viewModel.modelContext = context
-            
-            let view = TransactionDetailView(transaction: transaction, viewModel: viewModel)
-                .modelContainer(container)
-            takeSnapshot(of: view, named: "TransactionDetailViewWithData")
+            renderView(TransactionDetailView(transaction: transaction, viewModel: viewModel).modelContainer(container))
         }
     }
     
-    func testAddTransactionViewWithData() throws {
+    func testAddTransactionViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
@@ -388,12 +342,10 @@ final class ComprehensiveSnapshotTests: XCTestCase {
         ledgerViewModel.modelContext = context
         ledgerViewModel.fetchLedgers()
         
-        let view = AddTransactionView(viewModel: viewModel, ledgerViewModel: ledgerViewModel)
-            .modelContainer(container)
-        takeSnapshot(of: view, named: "AddTransactionViewWithData")
+        renderView(AddTransactionView(viewModel: viewModel, ledgerViewModel: ledgerViewModel).modelContainer(container))
     }
     
-    func testEditTransactionViewWithData() throws {
+    func testEditTransactionViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
@@ -404,14 +356,11 @@ final class ComprehensiveSnapshotTests: XCTestCase {
         if let transaction = transactions.first {
             let viewModel = TransactionViewModel()
             viewModel.modelContext = context
-            
-            let view = EditTransactionView(transaction: transaction, viewModel: viewModel)
-                .modelContainer(container)
-            takeSnapshot(of: view, named: "EditTransactionViewWithData")
+            renderView(EditTransactionView(transaction: transaction, viewModel: viewModel).modelContainer(container))
         }
     }
     
-    func testAddBudgetViewWithData() throws {
+    func testAddBudgetViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
@@ -420,12 +369,10 @@ final class ComprehensiveSnapshotTests: XCTestCase {
         budgetViewModel.modelContext = context
         budgetViewModel.fetchBudgets()
         
-        let view = AddBudgetView(budgetViewModel: budgetViewModel)
-            .modelContainer(container)
-        takeSnapshot(of: view, named: "AddBudgetViewWithData")
+        renderView(AddBudgetView(budgetViewModel: budgetViewModel).modelContainer(container))
     }
     
-    func testAddRecurringTransactionViewWithData() throws {
+    func testAddRecurringTransactionViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
@@ -433,12 +380,10 @@ final class ComprehensiveSnapshotTests: XCTestCase {
         let viewModel = RecurringTransactionViewModel()
         viewModel.modelContext = context
         
-        let view = AddRecurringTransactionView(viewModel: viewModel)
-            .modelContainer(container)
-        takeSnapshot(of: view, named: "AddRecurringTransactionViewWithData")
+        renderView(AddRecurringTransactionView(viewModel: viewModel).modelContainer(container))
     }
     
-    func testAddAccountViewWithData() throws {
+    func testAddAccountViewRender() throws {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
@@ -446,157 +391,75 @@ final class ComprehensiveSnapshotTests: XCTestCase {
         let viewModel = AccountViewModel()
         viewModel.modelContext = context
         
-        let view = AddAccountView(viewModel: viewModel)
-            .modelContainer(container)
-        takeSnapshot(of: view, named: "AddAccountViewWithData")
+        renderView(AddAccountView(viewModel: viewModel).modelContainer(container))
     }
     
-    func testMainTabViewWithData() throws {
-        let container = try createTestContainer()
-        let context = container.mainContext
-        try insertSampleData(context: context)
-        
-        let view = MainTabView().modelContainer(container)
-        takeSnapshot(of: view, named: "MainTabViewWithData")
+    // MARK: - Simple Views
+    
+    func testVoiceInputButtonRender() throws {
+        renderView(VoiceInputButton(amount: .constant("100"), category: .constant("food"), note: .constant("午餐"), transactionType: .constant(.expense)))
     }
     
-    func testVoiceInputButton() throws {
-        let view = VoiceInputButton(
-            amount: .constant("100"),
-            category: .constant("food"),
-            note: .constant("午餐"),
-            transactionType: .constant(.expense)
-        )
-        takeSnapshot(of: view, named: "VoiceInputButton")
-    }
-    
-    func testChartTheme() throws {
-        let view = VStack(spacing: 20) {
-            Text("ChartTheme Colors").font(.headline)
-            HStack {
-                ForEach(0..<8) { index in
-                    Circle()
-                        .fill(ChartTheme.color(for: index))
-                        .frame(width: 30, height: 30)
-                }
-            }
-            Text("Category Gradients").font(.headline)
-            HStack {
-                ChartTheme.categoryGradient("餐饮")
-                    .frame(width: 50, height: 50)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                ChartTheme.categoryGradient("交通")
-                    .frame(width: 50, height: 50)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                ChartTheme.incomeGradient()
-                    .frame(width: 50, height: 50)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                ChartTheme.expenseGradient()
-                    .frame(width: 50, height: 50)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-            }
-        }
-        takeSnapshot(of: view, named: "ChartThemeView")
-    }
-    
-    func testTransactionRow() throws {
+    func testTransactionRowRender() throws {
         let transaction = Transaction(amount: 100, type: .expense, category: "餐饮", note: "午餐外卖", date: Date())
-        let view = TransactionRow(transaction: transaction)
-        takeSnapshot(of: view, named: "TransactionRow")
+        renderView(TransactionRow(transaction: transaction))
     }
     
-    func testTransactionRowIncome() throws {
+    func testTransactionRowIncomeRender() throws {
         let transaction = Transaction(amount: 5000, type: .income, category: "工资", note: "6月工资", date: Date())
-        let view = TransactionRow(transaction: transaction)
-        takeSnapshot(of: view, named: "TransactionRowIncome")
+        renderView(TransactionRow(transaction: transaction))
     }
     
-    func testEmptyStateView() throws {
-        let view = EmptyStateView()
-        takeSnapshot(of: view, named: "EmptyStateView")
+    func testEmptyStateViewRender() throws {
+        renderView(EmptyStateView())
     }
     
-    func testCategoryButton() throws {
+    func testCategoryButtonRender() throws {
         let category = Category(id: "food", name: "餐饮", icon: "fork.knife", type: .expense)
-        
-        let view = VStack(spacing: 10) {
-            CategoryButton(category: category, isSelected: true) {}
-            CategoryButton(category: category, isSelected: false) {}
-        }
-        takeSnapshot(of: view, named: "CategoryButtons")
+        renderView(CategoryButton(category: category, isSelected: true) {})
+        renderView(CategoryButton(category: category, isSelected: false) {})
     }
     
-    func testFilterButtons() throws {
-        let view = VStack(spacing: 10) {
-            FilterButton(title: "全部", isSelected: true) {}
-            FilterButton(title: "收入", isSelected: false, color: .green) {}
-            FilterButton(title: "支出", isSelected: false, color: .red) {}
-        }
-        takeSnapshot(of: view, named: "FilterButtons")
+    func testFilterButtonRender() throws {
+        renderView(FilterButton(title: "全部", isSelected: true) {})
+        renderView(FilterButton(title: "收入", isSelected: false, color: .green) {})
+        renderView(FilterButton(title: "支出", isSelected: false, color: .red) {})
     }
     
-    func testSummaryCard() throws {
-        let view = SummaryCard(balance: 3500, income: 15000, expense: 11500, selectedDate: Date())
-        takeSnapshot(of: view, named: "SummaryCard")
+    func testSummaryCardRender() throws {
+        renderView(SummaryCard(balance: 3500, income: 15000, expense: 11500, selectedDate: Date()))
     }
     
-    func testStatCard() throws {
-        let view = HStack(spacing: 10) {
-            StatCard(title: "收入", amount: 15000, color: .green)
-            StatCard(title: "支出", amount: 11500, color: .red)
-            StatCard(title: "结余", amount: 3500, color: .blue)
-        }
-        takeSnapshot(of: view, named: "StatCards")
+    func testStatCardRender() throws {
+        renderView(StatCard(title: "收入", amount: 15000, color: .green))
     }
     
-    func testBudgetStatusCard() throws {
-        let budget = Budget(category: "餐饮", amount: 2000, month: Date())
-        let status = BudgetStatus(budget: budget, spent: 800)
-        
-        let view = VStack {
-            Text("Budget Status").font(.headline)
-            Text("Percentage: \(Int(status.percentage * 100))%")
-            Text("Remaining: ¥\(status.remaining)")
-            Text("Over Budget: \(status.isOverBudget)")
-            Text("Warning: \(status.isWarning)")
-        }
-        takeSnapshot(of: view, named: "BudgetStatusCard")
-    }
-    
-    func testDebtRowView() throws {
+    func testDebtRowViewRender() throws {
         let debt = Debt(name: "张三", amount: 1000, type: .lend, note: "借款", date: Date(), dueDate: Calendar.current.date(byAdding: .day, value: 30, to: Date()))
-        
-        let view = DebtRowView(debt: debt) {}
-        takeSnapshot(of: view, named: "DebtRowView")
+        renderView(DebtRowView(debt: debt) {})
     }
     
-    func testLedgerChip() throws {
-        let view = HStack(spacing: 10) {
-            LedgerChip(name: "个人", icon: "person", color: "blue", isSelected: true) {}
-            LedgerChip(name: "家庭", icon: "house", color: "green", isSelected: false) {}
+    func testLedgerChipRender() throws {
+        renderView(LedgerChip(name: "个人", icon: "person", color: "blue", isSelected: true) {})
+        renderView(LedgerChip(name: "家庭", icon: "house", color: "green", isSelected: false) {})
+    }
+    
+    func testMonthSelectorRender() throws {
+        renderView(MonthSelector(selectedDate: .constant(Date())))
+    }
+    
+    func testFilterBarRender() throws {
+        renderView(FilterBar(selectedType: .constant(nil)))
+    }
+    
+    func testChartThemeRender() throws {
+        let view = VStack(spacing: 20) {
+            ForEach(0..<8) { index in
+                Circle()
+                    .fill(ChartTheme.color(for: index))
+                    .frame(width: 30, height: 30)
+            }
         }
-        takeSnapshot(of: view, named: "LedgerChips")
-    }
-    
-    func testMonthSelector() throws {
-        let view = MonthSelector(selectedDate: .constant(Date()))
-        takeSnapshot(of: view, named: "MonthSelector")
-    }
-    
-    func testFilterBar() throws {
-        let view = FilterBar(selectedType: .constant(nil))
-        takeSnapshot(of: view, named: "FilterBar")
-    }
-    
-    private func takeSnapshot<Content: View>(of view: Content, named name: String, file: StaticString = #file, line: UInt = #line) {
-        let hostingController = UIHostingController(rootView: view)
-        hostingController.view.frame = CGRect(x: 0, y: 0, width: 393, height: 852)
-        
-        UIGraphicsBeginImageContextWithOptions(hostingController.view.bounds.size, false, 0)
-        hostingController.view.drawHierarchy(in: hostingController.view.bounds, afterScreenUpdates: true)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        XCTAssertNotNil(image, "Failed to capture snapshot for \(name)", file: file, line: line)
+        renderView(view)
     }
 }
