@@ -47,6 +47,7 @@
 		5FB22C259021D2428B6C7696 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47734E66339192F8DCB8A0D8 /* Category.swift */; };
 		66023FF8AE9D4E17F4F51383 /* ExtendedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AEA02AC73AA4A1C61FCB5E /* ExtendedTests.swift */; };
 		6EC82F8BA92E6553475C5320 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD23DE6F10197CD1D3E45404 /* CurrencyService.swift */; };
+		70E8EF1DDAB1899E70E3635E /* BookkeepingUITestsDeep.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA726A9325A16D8D1324A1E1 /* BookkeepingUITestsDeep.swift */; };
 		74BE88B9A25C69274D4D6FFC /* ChartTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF5AF16E373CB150A019ABF /* ChartTheme.swift */; };
 		759D4949CF901195010E688C /* BookkeepingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEF297A306B59E1253F86C /* BookkeepingApp.swift */; };
 		770CD6122A77290F2B48CF0C /* ReceiptScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212A76928101CBAD784BA34 /* ReceiptScanner.swift */; };
@@ -223,6 +224,7 @@
 		ED38E826E05ADD1D6FB9E34B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ED55B042578EE5C7F1CC1395 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 		F85B845DE0E9A980BD467753 /* Ledger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ledger.swift; sourceTree = "<group>"; };
+		FA726A9325A16D8D1324A1E1 /* BookkeepingUITestsDeep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookkeepingUITestsDeep.swift; sourceTree = "<group>"; };
 		FC4EFFEA132DA9E95CA24FB0 /* BillReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillReminder.swift; sourceTree = "<group>"; };
 		FCD69DE43F00AC8200C9DB6A /* SavingsGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsGoalView.swift; sourceTree = "<group>"; };
 		FE1F220CC4EA0A1DB2063A54 /* BookkeepingTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BookkeepingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				C45A4C15E014684232FA8B7D /* BookkeepingUITests.swift */,
+				FA726A9325A16D8D1324A1E1 /* BookkeepingUITestsDeep.swift */,
 				5E0D94826C6C904519C93FA1 /* BookkeepingUITestsExtended.swift */,
 			);
 			path = BookkeepingUITests;
@@ -669,6 +672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8E39EC9038913D75F0BF0F9 /* BookkeepingUITests.swift in Sources */,
+				70E8EF1DDAB1899E70E3635E /* BookkeepingUITestsDeep.swift in Sources */,
 				A36C9E51EB3D163E69153438 /* BookkeepingUITestsExtended.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
