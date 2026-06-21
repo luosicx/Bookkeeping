@@ -44,9 +44,9 @@ final class BookkeepingUITestsExtended: XCTestCase {
         XCTAssertTrue(nextMonth.exists)
         
         previousMonth.tap()
-        sleep(1)
+        usleep(1000000)
         nextMonth.tap()
-        sleep(1)
+        usleep(1000000)
         nextMonth.tap()
     }
     
@@ -175,7 +175,7 @@ final class BookkeepingUITestsExtended: XCTestCase {
         XCTAssertTrue(app.navigationBars["设置"].waitForExistence(timeout: 3))
         
         app.swipeUp()
-        sleep(1)
+        usleep(1000000)
         app.swipeDown()
     }
     

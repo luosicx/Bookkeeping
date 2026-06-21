@@ -25,7 +25,7 @@ final class BookkeepingUITestsDeep: XCTestCase {
             amountField.typeText("\(i * 10)")
             
             app.buttons["保存"].tap()
-            sleep(1)
+            usleep(1000000)
         }
     }
     
@@ -45,7 +45,7 @@ final class BookkeepingUITestsDeep: XCTestCase {
             }
             
             app.buttons["保存"].tap()
-            sleep(1)
+            usleep(1000000)
         }
     }
     
@@ -58,13 +58,13 @@ final class BookkeepingUITestsDeep: XCTestCase {
         // Scroll through all settings
         for _ in 0..<5 {
             app.swipeUp()
-            sleep(0.5)
+            usleep(500000)
         }
         
         // Scroll back up
         for _ in 0..<5 {
             app.swipeDown()
-            sleep(0.5)
+            usleep(500000)
         }
     }
     
@@ -83,7 +83,7 @@ final class BookkeepingUITestsDeep: XCTestCase {
             let addButton = app.buttons.matching(identifier: "plus").firstMatch
             if addButton.waitForExistence(timeout: 2) {
                 addButton.tap()
-                sleep(1)
+                usleep(1000000)
                 app.navigationBars.buttons.firstMatch.tap()
             }
             
@@ -106,7 +106,7 @@ final class BookkeepingUITestsDeep: XCTestCase {
             let addButton = app.buttons.matching(identifier: "plus").firstMatch
             if addButton.waitForExistence(timeout: 2) {
                 addButton.tap()
-                sleep(1)
+                usleep(1000000)
                 app.navigationBars.buttons.firstMatch.tap()
             }
             
@@ -128,7 +128,7 @@ final class BookkeepingUITestsDeep: XCTestCase {
             let addButton = app.buttons.matching(identifier: "plus").firstMatch
             if addButton.waitForExistence(timeout: 2) {
                 addButton.tap()
-                sleep(1)
+                usleep(1000000)
                 app.navigationBars.buttons.firstMatch.tap()
             }
             
@@ -150,7 +150,7 @@ final class BookkeepingUITestsDeep: XCTestCase {
             let addButton = app.buttons.matching(identifier: "plus").firstMatch
             if addButton.waitForExistence(timeout: 2) {
                 addButton.tap()
-                sleep(1)
+                usleep(1000000)
                 app.navigationBars.buttons.firstMatch.tap()
             }
             
@@ -172,7 +172,7 @@ final class BookkeepingUITestsDeep: XCTestCase {
             let addButton = app.buttons.matching(identifier: "plus").firstMatch
             if addButton.waitForExistence(timeout: 2) {
                 addButton.tap()
-                sleep(1)
+                usleep(1000000)
                 app.navigationBars.buttons.firstMatch.tap()
             }
             
@@ -197,7 +197,7 @@ final class BookkeepingUITestsDeep: XCTestCase {
             let csvButton = app.buttons["CSV"]
             if csvButton.waitForExistence(timeout: 2) {
                 csvButton.tap()
-                sleep(2)
+                usleep(2000000)
             }
             
             app.navigationBars.buttons.firstMatch.tap()
@@ -220,7 +220,7 @@ final class BookkeepingUITestsDeep: XCTestCase {
             let backupDataButton = app.buttons["备份数据"]
             if backupDataButton.waitForExistence(timeout: 2) {
                 backupDataButton.tap()
-                sleep(2)
+                usleep(2000000)
             }
             
             app.navigationBars.buttons.firstMatch.tap()
@@ -242,7 +242,7 @@ final class BookkeepingUITestsDeep: XCTestCase {
             let switches = app.switches
             if switches.count > 0 {
                 switches.element(boundBy: 0).tap()
-                sleep(1)
+                usleep(1000000)
                 switches.element(boundBy: 0).tap()
             }
             
@@ -265,7 +265,7 @@ final class BookkeepingUITestsDeep: XCTestCase {
             
             // Scroll through trend data
             app.swipeUp()
-            sleep(1)
+            usleep(1000000)
             
             app.navigationBars.buttons.firstMatch.tap()
         }
@@ -303,12 +303,12 @@ final class BookkeepingUITestsDeep: XCTestCase {
         // Scroll through statistics
         for _ in 0..<3 {
             app.swipeUp()
-            sleep(0.5)
+            usleep(500000)
         }
         
         for _ in 0..<3 {
             app.swipeDown()
-            sleep(0.5)
+            usleep(500000)
         }
     }
     
@@ -320,12 +320,12 @@ final class BookkeepingUITestsDeep: XCTestCase {
         // Scroll through home view
         for _ in 0..<3 {
             app.swipeUp()
-            sleep(0.5)
+            usleep(500000)
         }
         
         for _ in 0..<3 {
             app.swipeDown()
-            sleep(0.5)
+            usleep(500000)
         }
     }
     
@@ -338,7 +338,7 @@ final class BookkeepingUITestsDeep: XCTestCase {
         let cells = app.cells
         if cells.count > 0 {
             cells.element(boundBy: 0).tap()
-            sleep(1)
+            usleep(1000000)
             
             // Go back
             app.navigationBars.buttons.firstMatch.tap()
