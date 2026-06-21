@@ -12,26 +12,37 @@ def convert(xccov_json_path, output_path):
     
     coverage = ET.Element('coverage', version='1')
     
-    for file_data in data.get('files', []):
-        path = file_data.get('path', '')
+    # xccov JSON has a top-level 'files' array
+    files = data if isinstance(data, list) else data.get('files', [])
+    
+    for file_data in files:
+        path = file_data.get('path', file_data.get('name', ''))
         if not path or not path.endswith('.swift'):
             continue
         
-        # Normalize path - remove leading slash and make relative
+        # Normalize path
         if path.startswith('/'):
             path = path[1:]
         
+        line_coverage = file_data.get('lineCoverage', 0.0)
         executable = file_data.get('executableLines', 0)
         covered = file_data.get('coveredLines', 0)
-        line_coverage = file_data.get('lineCoverage', 0.0)
         
         file_el = ET.SubElement(coverage, 'file', path=path)
         
-        # Add line coverage data
-        lines_data = file_data.get('lines', [])
-        if not lines_data:
-            # Use summary data if no line-level data
-            line_el = ET.SubElement(file_el, 'lineToCover', lineNumber='1', coverage=str(int(line_coverage * 100)))
+        # Try to get line-level data
+        lines = file_data.get('lines', [])
+        if lines:
+            for line in lines:
+                ln = line.get('lineNumber', line.get('line', 0))
+                executed = line.get('isExecutable', line.get('executed', False))
+                if ln and executed:
+                    ET.SubElement(file_el, 'lineToCover', lineNumber=str(ln), coverage='100')
+        elif executable > 0:
+            # Use summary data
+            cov_pct = int(line_coverage * 100) if line_coverage else 0
+            if covered > 0:
+                ET.SubElement(file_el, 'lineToCover', lineNumber='1', coverage=str(cov_pct))
     
     xml_str = ET.tostring(coverage, encoding='unicode')
     pretty_xml = minidom.parseString(xml_str).toprettyxml(indent='  ')
@@ -39,7 +50,9 @@ def convert(xccov_json_path, output_path):
     with open(output_path, 'w') as f:
         f.write(pretty_xml)
     
-    print(f"Converted {xccov_json_path} to {output_path}")
+    # Count files processed
+    file_count = len([f for f in coverage.findall('file')])
+    print(f"Converted {xccov_json_path} to {output_path} ({file_count} files)")
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
