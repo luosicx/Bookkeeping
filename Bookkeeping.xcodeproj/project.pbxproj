@@ -46,6 +46,7 @@
 		5ED7AC1A3025DC8D58985EEF /* AddBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB13CB82FA49BEF5568744 /* AddBudgetView.swift */; };
 		5FB22C259021D2428B6C7696 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47734E66339192F8DCB8A0D8 /* Category.swift */; };
 		66023FF8AE9D4E17F4F51383 /* ExtendedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AEA02AC73AA4A1C61FCB5E /* ExtendedTests.swift */; };
+		6ABDC20D6A85FEE27CA490D2 /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04746912E23B2E2A8F582B6D /* SnapshotTests.swift */; };
 		6EC82F8BA92E6553475C5320 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD23DE6F10197CD1D3E45404 /* CurrencyService.swift */; };
 		70E8EF1DDAB1899E70E3635E /* BookkeepingUITestsDeep.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA726A9325A16D8D1324A1E1 /* BookkeepingUITestsDeep.swift */; };
 		74BE88B9A25C69274D4D6FFC /* ChartTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF5AF16E373CB150A019ABF /* ChartTheme.swift */; };
@@ -129,6 +130,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04746912E23B2E2A8F582B6D /* SnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTests.swift; sourceTree = "<group>"; };
 		085C0EE5BADBBCA07F439148 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		10B070118F83E96D54728BA6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		11B4B6CB8C31DC2E3ECB4731 /* app-icon.svg */ = {isa = PBXFileReference; path = "app-icon.svg"; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				480F1971623E6F9D18F39F28 /* MoreCoverageTests.swift */,
 				269EDFD3528EC09C7A40CB61 /* NotificationTests.swift */,
 				FE3BCD4293CBAA809E6DDA14 /* ServiceTests.swift */,
+				04746912E23B2E2A8F582B6D /* SnapshotTests.swift */,
 				67CA56F7B58B3704473E9CA7 /* ViewModelTests.swift */,
 				9217B32EC174A3C7ACFE42D2 /* VoiceCommandParserTests.swift */,
 			);
@@ -674,6 +677,7 @@
 				363267B5805F1F8684663309 /* MoreCoverageTests.swift in Sources */,
 				B1086F6448245A088B76F2C4 /* NotificationTests.swift in Sources */,
 				2F92E3FDE92743B1BBBBBE81 /* ServiceTests.swift in Sources */,
+				6ABDC20D6A85FEE27CA490D2 /* SnapshotTests.swift in Sources */,
 				9E7752739A51450E57641253 /* ViewModelTests.swift in Sources */,
 				B00F6367E34036F8ACA17496 /* VoiceCommandParserTests.swift in Sources */,
 			);
