@@ -1,0 +1,26 @@
+coverage:
+  status:
+    project:
+      default:
+        target: 50%
+        threshold: 5%
+    patch:
+      default:
+        target: 70%
+
+comment:
+  layout: "reach,diff,flags,files"
+  behavior: default
+  require_changes: false
+
+flags:
+  unittests:
+    paths:
+      - Bookkeeping/
+    carryforward: true
+
+ignore:
+  - "Bookkeeping/Resources/**"
+  - "BookkeepingWidget/**"
+  - "BookkeepingUITests/**"
+  - "**/*.generated.swift"
