@@ -55,7 +55,7 @@ final class BillReminderViewModelFullTests: XCTestCase {
     
     func testUpdateReminderAllFields() throws {
         let futureDate = Calendar.current.date(byAdding: .day, value: 7, to: Date())!
-        viewModel.addReminder(title: "旧标题", amount: 100, dueDate: futureDate, repeatFrequency: .monthly, note: "旧备注", )
+        viewModel.addReminder(title: "旧标题", amount: 100, dueDate: futureDate, repeatFrequency: .monthly, note: "旧备注")
         viewModel.fetchReminders()
         
         if let reminder = viewModel.reminders.first {
@@ -332,7 +332,7 @@ final class AccountViewModelFullTests: XCTestCase {
     }
     
     func testDeleteAccountWithTransactions() throws {
-        let account = Account(name: "测试", type: .cash, icon: "banknote", balance: 1000)
+        let account = Account(name: "测试", icon: "banknote", type: .cash, balance: 1000)
         modelContext.insert(account)
         
         let tx = Transaction(amount: 100, type: .expense, category: "餐饮", note: "", date: Date(), account: account)
