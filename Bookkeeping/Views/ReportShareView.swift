@@ -86,6 +86,7 @@ struct ReportShareView: View {
         }
     }
     
+    @MainActor
     private func generateReport() {
         reportImage = ReportExporter.exportMonthlyReport(
             date: selectedDate,
