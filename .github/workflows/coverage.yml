@@ -1,0 +1,55 @@
+name: Codecov Coverage
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+jobs:
+  coverage:
+    name: Coverage Report
+    runs-on: macos-14
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.4'
+
+      - name: Run Tests with Coverage
+        run: |
+          xcodebuild test \
+            -project Bookkeeping.xcodeproj \
+            -scheme Bookkeeping \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -enableCodeCoverage YES \
+            -resultBundlePath TestResults.xcresult || true
+
+      - name: Generate Coverage Report
+        run: |
+          xcresult=$(find . -name "*.xcresult" -maxdepth 1 | head -1)
+          if [ -n "$xcresult" ]; then
+            echo "Found xcresult: $xcresult"
+            xcrun xccov view --report "$xcresult" --json > coverage.json 2>&1 || true
+            echo "coverage.json size: $(wc -c < coverage.json 2>/dev/null || echo 0)"
+          else
+            echo "No xcresult bundle found"
+            echo '{"files":[]}' > coverage.json
+          fi
+
+      - name: Upload to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./coverage.json
+          flags: unittests
+          name: Bookkeeping
+          fail_ci_if_error: false
+          verbose: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
