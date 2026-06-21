@@ -16,6 +16,7 @@
 		17C92A2F6468582BB4CCEF9D /* BillReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4EFFEA132DA9E95CA24FB0 /* BillReminder.swift */; };
 		183A688C89CE12770ED73964 /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF12B0D830CEB18DBC9005 /* ImportView.swift */; };
 		1B9D901123557482C4D0E031 /* Debt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F17C64108055E43AA5EC055 /* Debt.swift */; };
+		1E4CAC0C2EE122784AAE868A /* ViewModelFullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66EC09CFE22109863C1C5F6 /* ViewModelFullTests.swift */; };
 		2725A892865EF08377524379 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BEDCC693EC2E5376D83EF1 /* Budget.swift */; };
 		2891E6B15CA447B7860B5669 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF4A03EC6191CD347369E8 /* HomeView.swift */; };
 		290BC6B0E1FD114870F42A2E /* Ledger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85B845DE0E9A980BD467753 /* Ledger.swift */; };
@@ -234,6 +235,7 @@
 		E700E4B9C6DF19EE39B1393F /* BudgetAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAlertManager.swift; sourceTree = "<group>"; };
 		ED38E826E05ADD1D6FB9E34B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ED55B042578EE5C7F1CC1395 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		F66EC09CFE22109863C1C5F6 /* ViewModelFullTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFullTests.swift; sourceTree = "<group>"; };
 		F85B845DE0E9A980BD467753 /* Ledger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ledger.swift; sourceTree = "<group>"; };
 		FA726A9325A16D8D1324A1E1 /* BookkeepingUITestsDeep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookkeepingUITestsDeep.swift; sourceTree = "<group>"; };
 		FC4EFFEA132DA9E95CA24FB0 /* BillReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillReminder.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				FE3BCD4293CBAA809E6DDA14 /* ServiceTests.swift */,
 				04746912E23B2E2A8F582B6D /* SnapshotTests.swift */,
 				68E45D86D3FF0071E02EEC6C /* ViewModelCompleteTests.swift */,
+				F66EC09CFE22109863C1C5F6 /* ViewModelFullTests.swift */,
 				FEDF23484F8DED8196D4F34A /* ViewModelNewTests.swift */,
 				67CA56F7B58B3704473E9CA7 /* ViewModelTests.swift */,
 				9217B32EC174A3C7ACFE42D2 /* VoiceCommandParserTests.swift */,
@@ -685,6 +688,7 @@
 				2F92E3FDE92743B1BBBBBE81 /* ServiceTests.swift in Sources */,
 				6ABDC20D6A85FEE27CA490D2 /* SnapshotTests.swift in Sources */,
 				7F9EABB930C581C5134AA896 /* ViewModelCompleteTests.swift in Sources */,
+				1E4CAC0C2EE122784AAE868A /* ViewModelFullTests.swift in Sources */,
 				6E45247C8D580CFA7B21EFC5 /* ViewModelNewTests.swift in Sources */,
 				9E7752739A51450E57641253 /* ViewModelTests.swift in Sources */,
 				B00F6367E34036F8ACA17496 /* VoiceCommandParserTests.swift in Sources */,
