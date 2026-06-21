@@ -10,54 +10,20 @@ struct HomeView: View {
     @State private var selectedType: TransactionType?
     @State private var selectedDate = Date()
     
-    var filteredTransactions: [Transaction] {
-        var result = ledgerViewModel.getTransactions(for: ledgerViewModel.selectedLedger, allTransactions: viewModel.transactions)
-        
-        if let type = selectedType {
-            result = result.filter { $0.type == type }
-        }
-        
-        if !searchText.isEmpty {
-            result = result.filter {
-                $0.category.localizedCaseInsensitiveContains(searchText) ||
-                $0.note.localizedCaseInsensitiveContains(searchText)
-            }
-        }
-        
-        let calendar = Calendar.current
-        result = result.filter {
-            calendar.isDate($0.date, equalTo: selectedDate, toGranularity: .month)
-        }
-        
-        return result
-    }
-    
-    var totalIncome: Double {
-        filteredTransactions.filter { $0.type == .income }.reduce(0) { $0 + $1.amount }
-    }
-    
-    var totalExpense: Double {
-        filteredTransactions.filter { $0.type == .expense }.reduce(0) { $0 + $1.amount }
-    }
-    
-    var balance: Double {
-        totalIncome - totalExpense
-    }
-    
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
                     LedgerSelector(ledgerViewModel: ledgerViewModel)
                     
-                    SummaryCard(balance: balance, income: totalIncome, expense: totalExpense, selectedDate: selectedDate)
+                    SummaryCard(balance: viewModel.filteredBalance, income: viewModel.filteredTotalIncome, expense: viewModel.filteredTotalExpense, selectedDate: selectedDate)
                     
                     MonthSelector(selectedDate: $selectedDate)
                     
                     FilterBar(selectedType: $selectedType)
                     
                     TransactionListView(
-                        transactions: filteredTransactions,
+                        transactions: viewModel.filteredTransactions,
                         viewModel: viewModel
                     )
                 }
@@ -81,8 +47,21 @@ struct HomeView: View {
                 ledgerViewModel.modelContext = modelContext
                 viewModel.fetchTransactions()
                 ledgerViewModel.fetchLedgers()
+                updateFilters()
             }
+            .onChange(of: selectedDate) { _, _ in updateFilters() }
+            .onChange(of: selectedType) { _, _ in updateFilters() }
+            .onChange(of: searchText) { _, _ in updateFilters() }
         }
+    }
+    
+    private func updateFilters() {
+        viewModel.filterTransactions(
+            type: selectedType,
+            searchText: searchText,
+            date: selectedDate,
+            ledger: ledgerViewModel.selectedLedger
+        )
     }
 }
 

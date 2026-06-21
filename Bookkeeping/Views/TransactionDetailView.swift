@@ -89,37 +89,20 @@ struct EditTransactionView: View {
     let transaction: Transaction
     let viewModel: TransactionViewModel
     
-    @State private var amount: String
-    @State private var type: TransactionType
-    @State private var selectedCategory: Category?
-    @State private var note: String
-    @State private var date: Date
-    
-    init(transaction: Transaction, viewModel: TransactionViewModel) {
-        self.transaction = transaction
-        self.viewModel = viewModel
-        _amount = State(initialValue: String(format: "%.2f", transaction.amount))
-        _type = State(initialValue: transaction.type)
-        _note = State(initialValue: transaction.note)
-        _date = State(initialValue: transaction.date)
-        
-        let categories = Category.categories(for: transaction.type)
-        let matchedCategory = categories.first { $0.localizedName == transaction.category }
-        _selectedCategory = State(initialValue: matchedCategory)
-    }
+    @State private var editViewModel = EditTransactionViewModel()
     
     var body: some View {
         NavigationStack {
             Form {
                 Section(header: Text(L.transactionType)) {
-                    Picker(L.transactionType, selection: $type) {
+                    Picker(L.transactionType, selection: $editViewModel.type) {
                         ForEach(TransactionType.allCases, id: \.self) { type in
                             Text(type.localizedName).tag(type)
                         }
                     }
                     .pickerStyle(.segmented)
-                    .onChange(of: type) { _, newValue in
-                        selectedCategory = Category.categories(for: newValue).first
+                    .onChange(of: editViewModel.type) { _, _ in
+                        editViewModel.selectedCategoryId = nil
                     }
                 }
                 
@@ -127,7 +110,7 @@ struct EditTransactionView: View {
                     HStack {
                         Text("¥")
                             .font(.title2)
-                        TextField(L.amountPlaceholder, text: $amount)
+                        TextField(L.amountPlaceholder, text: $editViewModel.amount)
                             .keyboardType(.decimalPad)
                             .font(.title2)
                     }
@@ -135,12 +118,12 @@ struct EditTransactionView: View {
                 
                 Section(header: Text(L.category)) {
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 4), spacing: 15) {
-                        ForEach(Category.categories(for: type)) { category in
+                        ForEach(Category.categories(for: editViewModel.type)) { category in
                             CategoryButton(
                                 category: category,
-                                isSelected: selectedCategory?.id == category.id
+                                isSelected: editViewModel.selectedCategoryId == category.id
                             ) {
-                                selectedCategory = category
+                                editViewModel.selectedCategoryId = category.id
                             }
                         }
                     }
@@ -148,11 +131,11 @@ struct EditTransactionView: View {
                 }
                 
                 Section(header: Text(L.note)) {
-                    TextField(L.addNote, text: $note)
+                    TextField(L.addNote, text: $editViewModel.note)
                 }
                 
                 Section(header: Text(L.date)) {
-                    DatePicker(L.selectDate, selection: $date, displayedComponents: .date)
+                    DatePicker(L.selectDate, selection: $editViewModel.date, displayedComponents: .date)
                 }
             }
             .navigationTitle(L.editRecord)
@@ -166,30 +149,17 @@ struct EditTransactionView: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(L.save) {
-                        saveChanges()
+                        editViewModel.saveChanges(transaction: transaction)
+                        viewModel.fetchTransactions()
+                        dismiss()
                     }
-                    .disabled(!isValid)
+                    .disabled(!editViewModel.isValid)
                 }
             }
+            .onAppear {
+                editViewModel.loadFromTransaction(transaction)
+            }
         }
-    }
-    
-    private var isValid: Bool {
-        guard let amountValue = Double(amount), amountValue > 0 else { return false }
-        return selectedCategory != nil
-    }
-    
-    private func saveChanges() {
-        guard let amountValue = Double(amount), let category = selectedCategory else { return }
-        
-        transaction.amount = amountValue
-        transaction.type = type
-        transaction.category = category.localizedName
-        transaction.note = note
-        transaction.date = date
-        
-        viewModel.fetchTransactions()
-        dismiss()
     }
 }
 

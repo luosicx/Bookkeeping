@@ -73,6 +73,7 @@
 		AA3816B2C9AD3A6969A48525 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F95087FDA9F8C453002A /* BudgetViewModel.swift */; };
 		B00F6367E34036F8ACA17496 /* VoiceCommandParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9217B32EC174A3C7ACFE42D2 /* VoiceCommandParserTests.swift */; };
 		B1086F6448245A088B76F2C4 /* NotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269EDFD3528EC09C7A40CB61 /* NotificationTests.swift */; };
+		B2C5446948F60D3C0C56C287 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5A723983307E15E59774B /* StatisticsViewModel.swift */; };
 		B3B5D4CC04F6C99D1EA4C8F2 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D39E58C8E766166FAF9E87 /* ShareView.swift */; };
 		B46FCF1B82F1E2C774C575C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8571D67CC83094964567B6EC /* Assets.xcassets */; };
 		B72730B0A8FF095A6560145A /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E18026CDAF103BAEE497E2 /* ThemeManager.swift */; };
@@ -83,7 +84,9 @@
 		C2EB4A88B37609479A21CE5F /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A7E3F2E398E63B1AF2A49A /* ShareService.swift */; };
 		C63D6F7DF027CFD48F079E41 /* DebtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662F16BA7950A1582BA4074 /* DebtView.swift */; };
 		C6BAFA95491AD9FD2356A355 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55B042578EE5C7F1CC1395 /* TransactionViewModel.swift */; };
+		C8A41DE7CE521811A59915D4 /* EditTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684E01D7F910FA50EF0B3C93 /* EditTransactionViewModel.swift */; };
 		C8E39EC9038913D75F0BF0F9 /* BookkeepingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45A4C15E014684232FA8B7D /* BookkeepingUITests.swift */; };
+		CA4B2DBDE42D81CC5F2CA424 /* AddTransactionFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356CC1113D2038165FD6EF8E /* AddTransactionFormViewModel.swift */; };
 		D11179E894EFDDF0231BA5EB /* LedgerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6579E4BBA0C3B5D44E9F0ED2 /* LedgerViewModel.swift */; };
 		D1E67CE5AEBFB590AFE3EA71 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3637B32B8CFFDDAB99FC303 /* SpeechRecognizer.swift */; };
 		D2C8D230B4D771395882F989 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B7E01C5F9A7A0A407A22E /* Tag.swift */; };
@@ -147,6 +150,7 @@
 		2BC76892DE92B4D31604B48B /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		3334962D3511CF2594AA419D /* TagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel.swift; sourceTree = "<group>"; };
 		34FAA8110659D561D0ED6085 /* SharedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDataManager.swift; sourceTree = "<group>"; };
+		356CC1113D2038165FD6EF8E /* AddTransactionFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionFormViewModel.swift; sourceTree = "<group>"; };
 		381B7E01C5F9A7A0A407A22E /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		383807EFD91466283D3CAD54 /* BudgetAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetAlertTests.swift; sourceTree = "<group>"; };
 		38B834B77F1200005A499139 /* CloudSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSyncService.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 		64AEA02AC73AA4A1C61FCB5E /* ExtendedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedTests.swift; sourceTree = "<group>"; };
 		6579E4BBA0C3B5D44E9F0ED2 /* LedgerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerViewModel.swift; sourceTree = "<group>"; };
 		67CA56F7B58B3704473E9CA7 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		684E01D7F910FA50EF0B3C93 /* EditTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionViewModel.swift; sourceTree = "<group>"; };
 		68C92E381E1C77D5F696BE6E /* RecurringTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringTransactionView.swift; sourceTree = "<group>"; };
 		692AF28B118CC4979C589FC7 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		6CF77A86E0F0C9F409D4330B /* RecurringTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringTransaction.swift; sourceTree = "<group>"; };
@@ -186,6 +191,7 @@
 		8FCEF297A306B59E1253F86C /* BookkeepingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookkeepingApp.swift; sourceTree = "<group>"; };
 		9217B32EC174A3C7ACFE42D2 /* VoiceCommandParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCommandParserTests.swift; sourceTree = "<group>"; };
 		9228F0B9C05104457B56DBCA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		95D5A723983307E15E59774B /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		96EF12B0D830CEB18DBC9005 /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportView.swift; sourceTree = "<group>"; };
 		9895C29E8CB7F6E398CF702A /* CustomCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryView.swift; sourceTree = "<group>"; };
 		9B6D5E2292CCF3050467425D /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -414,12 +420,15 @@
 			isa = PBXGroup;
 			children = (
 				A12F17EF8941F3D3F8EEB10C /* AccountViewModel.swift */,
+				356CC1113D2038165FD6EF8E /* AddTransactionFormViewModel.swift */,
 				4CE9C3700E9646A467404C77 /* BillReminderViewModel.swift */,
 				D188F95087FDA9F8C453002A /* BudgetViewModel.swift */,
 				2A200DACDBB74332CA809E32 /* DebtViewModel.swift */,
+				684E01D7F910FA50EF0B3C93 /* EditTransactionViewModel.swift */,
 				6579E4BBA0C3B5D44E9F0ED2 /* LedgerViewModel.swift */,
 				1A93EE4D28C04665DEFFEE5F /* RecurringTransactionViewModel.swift */,
 				B6706E11203C34E746088CB5 /* SavingsGoalViewModel.swift */,
+				95D5A723983307E15E59774B /* StatisticsViewModel.swift */,
 				3334962D3511CF2594AA419D /* TagViewModel.swift */,
 				ED55B042578EE5C7F1CC1395 /* TransactionViewModel.swift */,
 			);
@@ -580,6 +589,7 @@
 				D8D56290D931C84D74A98A88 /* AddAccountView.swift in Sources */,
 				5ED7AC1A3025DC8D58985EEF /* AddBudgetView.swift in Sources */,
 				3618A925BE2011D37A7BADBE /* AddRecurringTransactionView.swift in Sources */,
+				CA4B2DBDE42D81CC5F2CA424 /* AddTransactionFormViewModel.swift in Sources */,
 				4B6ACD1C8888989FECA652FC /* AddTransactionView.swift in Sources */,
 				A22D59A4CF5BDBD1255A4704 /* AnnualReportView.swift in Sources */,
 				0A2CB377D06176E6741B8CA0 /* AppLockView.swift in Sources */,
@@ -606,6 +616,7 @@
 				1B9D901123557482C4D0E031 /* Debt.swift in Sources */,
 				C63D6F7DF027CFD48F079E41 /* DebtView.swift in Sources */,
 				9A1BC2D186E4A6C9B6AC24BE /* DebtViewModel.swift in Sources */,
+				C8A41DE7CE521811A59915D4 /* EditTransactionViewModel.swift in Sources */,
 				37256E5B8E1FE12DBCA96A8F /* ExportService.swift in Sources */,
 				3EFE856A72DDE4953F815F7E /* ExportView.swift in Sources */,
 				2891E6B15CA447B7860B5669 /* HomeView.swift in Sources */,
@@ -637,6 +648,7 @@
 				30EBDC19914B3CAFD68CCFCE /* SharedDataManager.swift in Sources */,
 				D1E67CE5AEBFB590AFE3EA71 /* SpeechRecognizer.swift in Sources */,
 				F9EDB53C18D0F21707B43A3B /* StatisticsView.swift in Sources */,
+				B2C5446948F60D3C0C56C287 /* StatisticsViewModel.swift in Sources */,
 				D2C8D230B4D771395882F989 /* Tag.swift in Sources */,
 				0E242F4C604119010FD1790F /* TagManagementView.swift in Sources */,
 				4297F7DED9CC4AF985F09873 /* TagViewModel.swift in Sources */,

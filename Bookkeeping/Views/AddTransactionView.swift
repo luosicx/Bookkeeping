@@ -7,42 +7,28 @@ struct AddTransactionView: View {
     let viewModel: TransactionViewModel
     let ledgerViewModel: LedgerViewModel
     
-    @State private var amount: String = ""
-    @State private var type: TransactionType = .expense
-    @State private var selectedCategoryId: String?
-    @State private var note: String = ""
-    @State private var date: Date = Date()
-    @State private var selectedAccount: Account?
-    @State private var selectedLedger: Ledger?
-    @State private var selectedTags: [Tag] = []
-    @State private var accounts: [Account] = []
-    @State private var availableTags: [Tag] = []
-    
-    private var selectedCategory: Category? {
-        guard let id = selectedCategoryId else { return nil }
-        return Category.categories(for: type).first { $0.id == id }
-    }
+    @State private var formViewModel = AddTransactionFormViewModel()
     
     var body: some View {
         NavigationStack {
             Form {
                 Section(header: Text(L.transactionType)) {
                     HStack {
-                        Picker(L.transactionType, selection: $type) {
+                        Picker(L.transactionType, selection: $formViewModel.type) {
                             ForEach(TransactionType.allCases, id: \.self) { type in
                                 Text(type.localizedName).tag(type)
                             }
                         }
                         .pickerStyle(.segmented)
-                        .onChange(of: type) { _, _ in
-                            selectedCategoryId = nil
+                        .onChange(of: formViewModel.type) { _, _ in
+                            formViewModel.resetCategory()
                         }
                         
                         VoiceInputButton(
-                            amount: $amount,
-                            category: $selectedCategoryId,
-                            note: $note,
-                            transactionType: $type
+                            amount: $formViewModel.amount,
+                            category: $formViewModel.selectedCategoryId,
+                            note: $formViewModel.note,
+                            transactionType: $formViewModel.type
                         )
                     }
                 }
@@ -51,7 +37,7 @@ struct AddTransactionView: View {
                     HStack {
                         Text("¥")
                             .font(.title2)
-                        TextField(L.amountPlaceholder, text: $amount)
+                        TextField(L.amountPlaceholder, text: $formViewModel.amount)
                             .keyboardType(.decimalPad)
                             .font(.title2)
                     }
@@ -59,13 +45,13 @@ struct AddTransactionView: View {
                 
                 Section(header: Text(L.category)) {
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 4), spacing: 15) {
-                        ForEach(Category.categories(for: type)) { category in
+                        ForEach(Category.categories(for: formViewModel.type)) { category in
                             CategoryButton(
                                 category: category,
-                                isSelected: selectedCategoryId == category.id
+                                isSelected: formViewModel.selectedCategoryId == category.id
                             ) {
                                 withAnimation {
-                                    selectedCategoryId = category.id
+                                    formViewModel.selectedCategoryId = category.id
                                 }
                             }
                         }
@@ -74,7 +60,7 @@ struct AddTransactionView: View {
                 }
                 
                 Section(header: Text(L.selectLedger)) {
-                    Picker(L.selectLedger, selection: $selectedLedger) {
+                    Picker(L.selectLedger, selection: $formViewModel.selectedLedger) {
                         Text(L.none).tag(nil as Ledger?)
                         ForEach(ledgerViewModel.ledgers) { ledger in
                             HStack {
@@ -87,9 +73,9 @@ struct AddTransactionView: View {
                 }
                 
                 Section(header: Text(L.accountName)) {
-                    Picker(L.accountName, selection: $selectedAccount) {
+                    Picker(L.accountName, selection: $formViewModel.selectedAccount) {
                         Text(L.none).tag(nil as Account?)
-                        ForEach(accounts) { account in
+                        ForEach(formViewModel.accounts) { account in
                             HStack {
                                 Image(systemName: account.icon)
                                 Text(account.name)
@@ -100,15 +86,15 @@ struct AddTransactionView: View {
                 }
                 
                 Section(header: Text(L.note)) {
-                    TextField(L.addNote, text: $note)
+                    TextField(L.addNote, text: $formViewModel.note)
                 }
                 
                 Section(header: Text(L.date)) {
-                    DatePicker(L.selectDate, selection: $date, displayedComponents: .date)
+                    DatePicker(L.selectDate, selection: $formViewModel.date, displayedComponents: .date)
                 }
                 
                 Section(header: Text(L.tags)) {
-                    TagPickerView(selectedTags: $selectedTags, availableTags: availableTags)
+                    TagPickerView(selectedTags: $formViewModel.selectedTags, availableTags: formViewModel.availableTags)
                 }
             }
             .navigationTitle(L.addTransaction)
@@ -122,43 +108,18 @@ struct AddTransactionView: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(L.save) {
-                        saveTransaction()
+                        formViewModel.saveTransaction(viewModel: viewModel)
+                        dismiss()
                     }
-                    .disabled(!isValid)
+                    .disabled(!formViewModel.isValid)
                 }
             }
             .onAppear {
-                loadAccounts()
-                selectedLedger = ledgerViewModel.selectedLedger
+                formViewModel.loadAccounts(modelContext: modelContext)
+                formViewModel.loadTags(modelContext: modelContext)
+                formViewModel.selectedLedger = ledgerViewModel.selectedLedger
             }
         }
-    }
-    
-    private var isValid: Bool {
-        guard let amountValue = Double(amount), amountValue > 0 else { return false }
-        return selectedCategory != nil
-    }
-    
-    private func loadAccounts() {
-        let descriptor = FetchDescriptor<Account>(sortBy: [SortDescriptor(\.name)])
-        accounts = (try? modelContext.fetch(descriptor)) ?? []
-        
-        let tagDescriptor = FetchDescriptor<Tag>(sortBy: [SortDescriptor(\.name)])
-        availableTags = (try? modelContext.fetch(tagDescriptor)) ?? []
-    }
-    
-    private func saveTransaction() {
-        guard let amountValue = Double(amount), let category = selectedCategory else { return }
-        viewModel.addTransaction(
-            amount: amountValue,
-            type: type,
-            category: category.localizedName,
-            note: note,
-            date: date,
-            account: selectedAccount,
-            ledger: selectedLedger
-        )
-        dismiss()
     }
 }
 
