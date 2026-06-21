@@ -29,16 +29,23 @@ jobs:
           xcodebuild test \
             -project Bookkeeping.xcodeproj \
             -scheme Bookkeeping \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=17.5' \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.5' \
             -enableCodeCoverage YES \
             -resultBundlePath TestResults.xcresult \
-            | xcpretty || true
+            2>&1 | xcpretty || true
 
       - name: Generate Coverage Report
         run: |
-          xcrun xccov view --report TestResults.xcresult --json > coverage.json || true
-          # Convert to lcov format for SonarCloud
-          xcrun xccov view --report TestResults.xcresult --lcov > coverage.lcov || true
+          if [ -f TestResults.xcresult ]; then
+            xcrun xccov view --report TestResults.xcresult --json > coverage.json
+            xcrun xccov view --report TestResults.xcresult --lcov > coverage.lcov
+            echo "Coverage files generated"
+            cat coverage.json | head -20
+          else
+            echo "No xcresult bundle found"
+            echo '{"coverage":[]}' > coverage.json
+            echo "" > coverage.lcov
+          fi
 
       - name: Run SwiftLint
         run: |
