@@ -29,10 +29,11 @@ jobs:
           xcodebuild test \
             -project Bookkeeping.xcodeproj \
             -scheme Bookkeeping \
-            -destination 'platform=iOS Simulator,OS=latest' \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
             -enableCodeCoverage YES \
-            -resultBundlePath TestResults.xcresult \
-            2>&1 | xcpretty || true
+            -resultBundlePath TestResults.xcresult 2>&1 | xcpretty || true
+          echo "Test exit code: $?"
+          ls -la TestResults.xcresult 2>&1 || echo "No xcresult bundle"
 
       - name: Generate Coverage Report
         run: |
