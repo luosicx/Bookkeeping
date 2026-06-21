@@ -37,14 +37,13 @@ jobs:
       - name: Generate Coverage Report
         run: |
           if [ -f TestResults.xcresult ]; then
-            xcrun xccov view --report TestResults.xcresult --json > coverage.json
-            xcrun xccov view --report TestResults.xcresult --lcov > coverage.lcov
-            echo "Coverage files generated"
-            cat coverage.json | head -20
+            echo "xcresult bundle found"
+            xcrun xccov view --report TestResults.xcresult --json > coverage.json 2>&1
+            echo "coverage.json size: $(wc -c < coverage.json)"
+            head -50 coverage.json
           else
             echo "No xcresult bundle found"
             echo '{"coverage":[]}' > coverage.json
-            echo "" > coverage.lcov
           fi
 
       - name: Run SwiftLint
