@@ -31,9 +31,10 @@ jobs:
             -scheme Bookkeeping \
             -destination 'platform=iOS Simulator,name=iPhone 16' \
             -enableCodeCoverage YES \
-            -resultBundlePath TestResults.xcresult 2>&1 | xcpretty || true
-          echo "Test exit code: $?"
+            -resultBundlePath TestResults.xcresult || true
+          echo "---"
           ls -la TestResults.xcresult 2>&1 || echo "No xcresult bundle"
+          find . -name "*.xcresult" 2>/dev/null
 
       - name: Generate Coverage Report
         run: |
