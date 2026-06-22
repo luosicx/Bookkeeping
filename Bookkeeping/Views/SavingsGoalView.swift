@@ -60,6 +60,11 @@ struct SavingsGoalView: View {
             viewModel.modelContext = modelContext
             viewModel.fetchGoals()
         }
+        .onChange(of: showingAddGoal) { _, isShowing in
+            if !isShowing {
+                viewModel.fetchGoals()
+            }
+        }
     }
 }
 

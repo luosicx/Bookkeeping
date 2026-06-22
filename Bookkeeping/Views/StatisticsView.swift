@@ -82,6 +82,8 @@ struct StatisticsView: View {
                 viewModel.modelContext = modelContext
                 viewModel.fetchTransactions()
             }
+            .onChange(of: selectedDate) { _, _ in viewModel.fetchTransactions() }
+            .onChange(of: selectedPeriod) { _, _ in viewModel.fetchTransactions() }
         }
     }
 }

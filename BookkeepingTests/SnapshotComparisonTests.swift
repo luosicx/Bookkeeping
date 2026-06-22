@@ -230,7 +230,7 @@ final class FeatureViewSnapshotTests: SnapshotTestCase {
 final class DetailViewSnapshotTests: SnapshotTestCase {
     
     func testTransactionDetailViewSnapshot() throws {
-        let tx = try context.fetch(FetchDescriptor<Transaction>()).first!
+        let tx = try context.fetch(FetchDescriptor<Bookkeeping.Transaction>()).first!
         let vm = TransactionViewModel()
         vm.modelContext = context
         assertSnapshot(TransactionDetailView(transaction: tx, viewModel: vm).modelContainer(container), named: "TransactionDetailView")
@@ -247,7 +247,7 @@ final class DetailViewSnapshotTests: SnapshotTestCase {
     }
     
     func testEditTransactionViewSnapshot() throws {
-        let tx = try context.fetch(FetchDescriptor<Transaction>()).first!
+        let tx = try context.fetch(FetchDescriptor<Bookkeeping.Transaction>()).first!
         let vm = TransactionViewModel()
         vm.modelContext = context
         assertSnapshot(EditTransactionView(transaction: tx, viewModel: vm).modelContainer(container), named: "EditTransactionView")

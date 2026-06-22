@@ -288,7 +288,7 @@ final class ViewExecutionTests: XCTestCase {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        let tx = try context.fetch(FetchDescriptor<Transaction>()).first!
+        let tx = try context.fetch(FetchDescriptor<Bookkeeping.Transaction>()).first!
         let vm = TransactionViewModel()
         vm.modelContext = context
         fullyRender(TransactionDetailView(transaction: tx, viewModel: vm).modelContainer(container))
@@ -311,7 +311,7 @@ final class ViewExecutionTests: XCTestCase {
         let container = try createTestContainer()
         let context = container.mainContext
         try insertSampleData(context: context)
-        let tx = try context.fetch(FetchDescriptor<Transaction>()).first!
+        let tx = try context.fetch(FetchDescriptor<Bookkeeping.Transaction>()).first!
         let vm = TransactionViewModel()
         vm.modelContext = context
         fullyRender(EditTransactionView(transaction: tx, viewModel: vm).modelContainer(container))

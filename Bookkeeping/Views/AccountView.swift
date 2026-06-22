@@ -62,6 +62,11 @@ struct AccountView: View {
             viewModel.modelContext = modelContext
             viewModel.fetchAccounts()
         }
+        .onChange(of: showingAddAccount) { _, isShowing in
+            if !isShowing {
+                viewModel.fetchAccounts()
+            }
+        }
     }
 }
 

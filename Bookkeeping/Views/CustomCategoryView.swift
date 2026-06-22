@@ -82,6 +82,11 @@ struct CustomCategoryView: View {
         .onAppear {
             categoryManager.fetchCategories(modelContext: modelContext)
         }
+        .onChange(of: showingAddCategory) { _, isShowing in
+            if !isShowing {
+                categoryManager.fetchCategories(modelContext: modelContext)
+            }
+        }
     }
 }
 

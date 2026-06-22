@@ -91,6 +91,18 @@ struct BudgetView: View {
             budgetViewModel.fetchBudgets(for: selectedDate)
             budgetViewModel.fetchOverallBudget(for: selectedDate)
         }
+        .onChange(of: showingAddBudget) { _, isShowing in
+            if !isShowing {
+                budgetViewModel.fetchBudgets(for: selectedDate)
+                transactionViewModel.fetchTransactions()
+            }
+        }
+        .onChange(of: showingSetOverallBudget) { _, isShowing in
+            if !isShowing {
+                budgetViewModel.fetchOverallBudget(for: selectedDate)
+                transactionViewModel.fetchTransactions()
+            }
+        }
     }
 }
 

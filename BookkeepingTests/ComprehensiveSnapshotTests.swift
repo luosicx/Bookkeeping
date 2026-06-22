@@ -319,7 +319,7 @@ final class ComprehensiveSnapshotTests: XCTestCase {
         let context = container.mainContext
         try insertSampleData(context: context)
         
-        let descriptor = FetchDescriptor<Transaction>()
+        let descriptor = FetchDescriptor<Bookkeeping.Transaction>()
         let transactions = try context.fetch(descriptor)
         
         if let transaction = transactions.first {
@@ -350,7 +350,7 @@ final class ComprehensiveSnapshotTests: XCTestCase {
         let context = container.mainContext
         try insertSampleData(context: context)
         
-        let descriptor = FetchDescriptor<Transaction>()
+        let descriptor = FetchDescriptor<Bookkeeping.Transaction>()
         let transactions = try context.fetch(descriptor)
         
         if let transaction = transactions.first {

@@ -85,6 +85,11 @@ struct DebtView: View {
                 viewModel.modelContext = modelContext
                 viewModel.fetchDebts()
             }
+            .onChange(of: showAddDebt) { _, isShowing in
+                if !isShowing {
+                    viewModel.fetchDebts()
+                }
+            }
         }
     }
 }

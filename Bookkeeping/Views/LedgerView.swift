@@ -67,6 +67,11 @@ struct LedgerView: View {
             viewModel.modelContext = modelContext
             viewModel.fetchLedgers()
         }
+        .onChange(of: showingAddLedger) { _, isShowing in
+            if !isShowing {
+                viewModel.fetchLedgers()
+            }
+        }
     }
 }
 

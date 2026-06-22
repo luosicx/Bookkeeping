@@ -52,6 +52,12 @@ struct HomeView: View {
             .onChange(of: selectedDate) { _, _ in updateFilters() }
             .onChange(of: selectedType) { _, _ in updateFilters() }
             .onChange(of: searchText) { _, _ in updateFilters() }
+            .onChange(of: showingAddView) { _, isShowing in
+                if !isShowing {
+                    viewModel.fetchTransactions()
+                    updateFilters()
+                }
+            }
         }
     }
     

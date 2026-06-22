@@ -76,6 +76,11 @@ struct BillReminderView: View {
             viewModel.fetchReminders()
             checkNotificationPermission()
         }
+        .onChange(of: showingAddReminder) { _, isShowing in
+            if !isShowing {
+                viewModel.fetchReminders()
+            }
+        }
     }
     
     private func checkNotificationPermission() {

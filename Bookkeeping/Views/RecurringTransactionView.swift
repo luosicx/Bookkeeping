@@ -76,6 +76,11 @@ struct RecurringTransactionView: View {
             viewModel.modelContext = modelContext
             viewModel.fetchRecurringTransactions()
         }
+        .onChange(of: showingAddView) { _, isShowing in
+            if !isShowing {
+                viewModel.fetchRecurringTransactions()
+            }
+        }
     }
 }
 
